@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 
 const categories = [
   {
@@ -290,8 +291,8 @@ export default function Products() {
                     handleCategoryChange(category)
                   }
                   className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition ${active
-                      ? "bg-[#FF1744] text-white"
-                      : "border border-black/10 bg-white text-black/60"
+                    ? "bg-[#FF1744] text-white"
+                    : "border border-black/10 bg-white text-black/60"
                     }`}
                 >
                   <Icon size={17} />
@@ -324,14 +325,14 @@ export default function Products() {
                         handleCategoryChange(category)
                       }
                       className={`group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-all ${active
-                          ? "bg-black text-white shadow-lg"
-                          : "text-black/60 hover:bg-black/[0.04] hover:text-black"
+                        ? "bg-black text-white shadow-lg"
+                        : "text-black/60 hover:bg-black/[0.04] hover:text-black"
                         }`}
                     >
                       <span
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${active
-                            ? "bg-[#FF1744]"
-                            : "bg-black/[0.05]"
+                          ? "bg-[#FF1744]"
+                          : "bg-black/[0.05]"
                           }`}
                       >
                         <Icon size={18} />
@@ -344,8 +345,8 @@ export default function Products() {
 
                         <span
                           className={`mt-0.5 block text-[11px] ${active
-                              ? "text-white/45"
-                              : "text-black/35"
+                            ? "text-white/45"
+                            : "text-black/35"
                             }`}
                         >
                           {category.time}
@@ -355,8 +356,8 @@ export default function Products() {
                       <ChevronRight
                         size={15}
                         className={`transition-transform ${active
-                            ? "translate-x-0.5 text-[#FF1744]"
-                            : "text-black/20"
+                          ? "translate-x-0.5 text-[#FF1744]"
+                          : "text-black/20"
                           }`}
                       />
                     </button>
@@ -411,8 +412,8 @@ export default function Products() {
                           )
                         }
                         className={`rounded-full px-4 py-2 text-sm font-medium transition ${active
-                            ? "bg-[#FF1744] text-white"
-                            : "bg-black/[0.04] text-black/55 hover:bg-black/[0.08] hover:text-black"
+                          ? "bg-[#FF1744] text-white"
+                          : "bg-black/[0.04] text-black/55 hover:bg-black/[0.08] hover:text-black"
                           }`}
                       >
                         {subcategory}
@@ -488,74 +489,76 @@ export default function Products() {
 
 function ProductCard({ product }) {
   return (
-    <motion.article
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-      className="group overflow-hidden rounded-2xl border border-black/10 bg-white"
-    >
-      {/* Image */}
-      <div className="relative aspect-[1/1] overflow-hidden bg-[#f5f5f5]">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
-
-        {/* Sale */}
-        <div className="absolute left-3 top-3 rounded-full bg-[#FF1744] px-2.5 py-1 text-[10px] font-bold text-white">
-          SALE
-        </div>
-
-        {/* Cart */}
-        <button
-          type="button"
-          aria-label={`Add ${product.name} to cart`}
-          className="absolute bottom-3 right-3 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#FF1744] hover:text-white"
-        >
-          <ShoppingCart size={15} />
-        </button>
-      </div>
-
-      {/* Details */}
-      <div className="p-4">
-        {/* Rating */}
-        <div className="mb-2 flex items-center gap-1">
-          <Star
-            size={12}
-            fill="#FF1744"
-            className="text-[#FF1744]"
+    <Link href={"/products/air-hockey-table"}>
+      <motion.article
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.2 }}
+        className="group overflow-hidden rounded-2xl border border-black/10 bg-white"
+      >
+        {/* Image */}
+        <div className="relative aspect-[1/1] overflow-hidden bg-[#f5f5f5]">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
 
-          <span className="text-[11px] font-semibold text-black/60">
-            {product.rating}
-          </span>
+          {/* Sale */}
+          <div className="absolute left-3 top-3 rounded-full bg-[#FF1744] px-2.5 py-1 text-[10px] font-bold text-white">
+            SALE
+          </div>
 
-          <span className="text-[10px] text-black/30">
-            ({product.reviews})
-          </span>
+          {/* Cart */}
+          <button
+            type="button"
+            aria-label={`Add ${product.name} to cart`}
+            className="absolute bottom-3 right-3 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#FF1744] hover:text-white"
+          >
+            <ShoppingCart size={15} />
+          </button>
         </div>
 
-        <h4 className="line-clamp-2 text-sm font-bold leading-5 text-black">
-          {product.name}
-        </h4>
+        {/* Details */}
+        <div className="p-4">
+          {/* Rating */}
+          <div className="mb-2 flex items-center gap-1">
+            <Star
+              size={12}
+              fill="#FF1744"
+              className="text-[#FF1744]"
+            />
 
-        <div className="mt-3 flex items-center justify-between">
-          <div>
-            <span className="text-sm font-black text-black">
-              {product.price}
+            <span className="text-[11px] font-semibold text-black/60">
+              {product.rating}
             </span>
 
-            <span className="ml-1.5 text-[11px] text-black/30 line-through">
-              {product.oldPrice}
+            <span className="text-[10px] text-black/30">
+              ({product.reviews})
             </span>
           </div>
 
-          <ArrowUpRight
-            size={16}
-            className="text-black/30 transition-colors group-hover:text-[#FF1744]"
-          />
+          <h4 className="line-clamp-2 text-sm font-bold leading-5 text-black">
+            {product.name}
+          </h4>
+
+          <div className="mt-3 flex items-center justify-between">
+            <div>
+              <span className="text-sm font-black text-black">
+                {product.price}
+              </span>
+
+              <span className="ml-1.5 text-[11px] text-black/30 line-through">
+                {product.oldPrice}
+              </span>
+            </div>
+
+            <ArrowUpRight
+              size={16}
+              className="text-black/30 transition-colors group-hover:text-[#FF1744]"
+            />
+          </div>
         </div>
-      </div>
-    </motion.article>
+      </motion.article>
+    </Link>
   );
 }
