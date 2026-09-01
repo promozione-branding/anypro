@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Toy Park",
-  description: "Toy Park",
+  title: "Anypro",
+  description: "Anypro",
 };
 
 export default function RootLayout({ children }) {

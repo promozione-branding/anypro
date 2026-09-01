@@ -11,6 +11,10 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import FAQItem from "@/components/home/Faq";
 import { useState } from "react";
 import ContactCTA from "@/components/home/Contact";
+import ExperienceStats from "@/components/home/ExperienceStats";
+import AnyproCategoryMarquee from "@/components/home/Marquee";
+import AnyproCTA from "@/components/home/CTA";
+import AnyproProcess from "@/components/home/AnyproProcess";
 
 export default function Home() {
 
@@ -18,9 +22,13 @@ export default function Home() {
     <main>
       <Hero />
       <AboutUs />
+      <ExperienceStats />
       <CategoriesSlider />
+      <AnyproCTA />
+      <AnyproCategoryMarquee />
       <ToyParkCategories />
       <WhyChooseUs />
+      <AnyproProcess />
       <CarromScrollSection />
       <ProductSection />
       <EveryGameSection />

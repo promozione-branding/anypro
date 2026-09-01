@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
     FiActivity,
     FiShield,
@@ -30,7 +31,7 @@ export default function AboutUs() {
     return (
         <section
             id="about"
-            className="relative overflow-hidden bg-white py-10 md:py-15"
+            className="relative overflow-hidden bg-white pt-10 md:pt-15 pb-5"
         >
             {/* =====================================================
                 BACKGROUND DECORATIONS
@@ -477,34 +478,35 @@ export default function AboutUs() {
                         {/* =================================================
                             BUTTON
                         ================================================== */}
+                        <Link href="/products">
+                            <motion.button
+                                initial={{
+                                    opacity: 0,
+                                    y: 20,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                viewport={{
+                                    once: true,
+                                }}
+                                transition={{
+                                    delay: 0.6,
+                                }}
+                                whileHover={{
+                                    x: 5,
+                                }}
+                                whileTap={{
+                                    scale: 0.96,
+                                }}
+                                className="mt-10 flex items-center gap-3 rounded-full bg-[#e31e24] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-200 transition-shadow hover:shadow-xl"
+                            >
+                                Discover More
 
-                        <motion.button
-                            initial={{
-                                opacity: 0,
-                                y: 20,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                            }}
-                            transition={{
-                                delay: 0.6,
-                            }}
-                            whileHover={{
-                                x: 5,
-                            }}
-                            whileTap={{
-                                scale: 0.96,
-                            }}
-                            className="mt-10 flex items-center gap-3 rounded-full bg-[#e31e24] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-200 transition-shadow hover:shadow-xl"
-                        >
-                            Discover More
-
-                            <FiArrowRight size={18} />
-                        </motion.button>
+                                <FiArrowRight size={18} />
+                            </motion.button>
+                        </Link>
                     </motion.div>
                 </div>
             </div>

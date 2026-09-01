@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
     ArrowUpRight,
@@ -13,6 +13,57 @@ import {
 } from "lucide-react";
 
 export default function ContactCTA() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        setIsSubmitting(true);
+        setStatus("");
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const trimmedFullName = String(formData.get("name") || "").trim();
+        const trimmedPhone = String(formData.get("phone") || "").trim();
+        const trimmedEmail = String(formData.get("email") || "").trim();
+        const trimmedProduct = String(formData.get("product") || "").trim();
+        const trimmedMessage = String(formData.get("message") || "").trim();
+
+        try {
+            const res = await fetch("https://brandbnalo.com/api/form/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    platform: "Anypro Contact Page",
+                    platformEmail: "info@toyparkindia.com",
+                    name: trimmedFullName,
+                    email: trimmedEmail,
+                    company: "NA",
+                    phone: trimmedPhone,
+                    product: trimmedProduct,
+                    place: "N/A",
+                    message: trimmedMessage,
+                }),
+            });
+
+            if (!res.ok) {
+                throw new Error("Failed to submit form");
+            }
+
+            setStatus("success");
+            form.reset();
+        } catch (error) {
+            console.error("Contact form submission error:", error);
+            setStatus("error");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section className="relative overflow-hidden border-t border-red-300 bg-white py-10 sm:py-12 lg:py-15">
             {/* Background decoration */}
@@ -81,7 +132,6 @@ export default function ContactCTA() {
                                 }}
                                 className="relative mt-6 hidden h-[270px] sm:block"
                             >
-                                {/* Red circle */}
                                 <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF1744]/10 blur-2xl" />
 
                                 <img
@@ -98,7 +148,7 @@ export default function ContactCTA() {
                                         size={14}
                                         className="text-[#FF1744]"
                                     />
-                                    hello@example.com
+                                    info@toyparkindia.com
                                 </div>
 
                                 <div className="flex items-center gap-2 text-xs text-white/40">
@@ -106,7 +156,7 @@ export default function ContactCTA() {
                                         size={14}
                                         className="text-[#FF1744]"
                                     />
-                                    +1 234 567 890
+                                    +919811117654
                                 </div>
                             </div>
                         </motion.div>
@@ -138,7 +188,10 @@ export default function ContactCTA() {
                                 </p>
                             </div>
 
-                            <form className="space-y-4">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="space-y-4"
+                            >
                                 {/* Name + Phone */}
                                 <div className="grid gap-4 sm:grid-cols-2">
                                     {/* Name */}
@@ -206,21 +259,23 @@ export default function ContactCTA() {
                                         <option value="" disabled>
                                             Select a product
                                         </option>
-                                        <option value="website">
-                                            Website
+
+                                        <option value="Table Games">
+                                            Table Games
                                         </option>
-                                        <option value="web-app">
-                                            Web Application
+
+                                        <option value="Board Game">
+                                            Board Game
                                         </option>
-                                        <option value="ui-ux">
-                                            UI / UX Design
+
+                                        <option value="Sports Goods">
+                                            Sports Goods
                                         </option>
-                                        <option value="branding">
-                                            Branding
+
+                                        <option value="Activity & Recreational Games">
+                                            Activity & Recreational Games
                                         </option>
-                                        <option value="other">
-                                            Other
-                                        </option>
+
                                     </select>
                                 </div>
 
@@ -240,17 +295,37 @@ export default function ContactCTA() {
                                     />
                                 </div>
 
+                                {/* Success / Error message */}
+                                {status === "success" && (
+                                    <div className="rounded-xl bg-green-50 px-4 py-3 text-center text-sm font-medium text-green-600">
+                                        Thank you! Your inquiry has been
+                                        submitted successfully.
+                                    </div>
+                                )}
+
+                                {status === "error" && (
+                                    <div className="rounded-xl bg-red-50 px-4 py-3 text-center text-sm font-medium text-red-600">
+                                        Something went wrong. Please try
+                                        again.
+                                    </div>
+                                )}
+
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#FF1744] text-sm font-bold text-white transition-all duration-300 hover:bg-black hover:shadow-lg hover:shadow-[#FF1744]/20"
+                                    disabled={isSubmitting}
+                                    className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#FF1744] text-sm font-bold text-white transition-all duration-300 hover:bg-black hover:shadow-lg hover:shadow-[#FF1744]/20 disabled:cursor-not-allowed disabled:opacity-60"
                                 >
-                                    Send Inquiry
+                                    {isSubmitting
+                                        ? "Sending..."
+                                        : "Send Inquiry"}
 
-                                    <ArrowUpRight
-                                        size={17}
-                                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                                    />
+                                    {!isSubmitting && (
+                                        <ArrowUpRight
+                                            size={17}
+                                            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                        />
+                                    )}
                                 </button>
 
                                 <p className="text-center text-[11px] text-black/35">

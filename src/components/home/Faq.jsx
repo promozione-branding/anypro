@@ -238,17 +238,16 @@ export default function FAQ() {
                                     Still have questions?
                                 </h3>
 
-                                <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-white/45">
+                                <p className="mx-auto mt-2 mb-5 max-w-xs text-sm leading-6 text-white/45">
                                     Can't find what you're looking for?
                                     Let's talk about your project.
                                 </p>
 
-                                <button
-                                    type="button"
+                                <a href="tel:+919811117654"
                                     className="mt-5 rounded-full bg-[#FF1744] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white hover:text-black"
                                 >
                                     Let's Talk
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </motion.div>
