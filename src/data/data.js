@@ -307,7 +307,8 @@ export const products = [
     slug: "other-table-arcade-games",
     category: "Table Games",
     subcategory: "Other Table & Arcade Games",
-
+      color: "#FCE8F3",
+       badge: "LIMITED",
     rating: 4.3,
     reviews: 114,
 
@@ -374,6 +375,8 @@ export const products = [
     slug: "carrom-board",
     category: "Board Game",
       subcategory: "Carrom Board",
+       color: "#FCE8F3",
+       badge: "LIMITED",
 
     rating: 4.7,
     reviews: 186,
@@ -447,6 +450,8 @@ export const products = [
     rating: 4.9,
     reviews: 142,
 
+     color: "#FCE8F3",
+       badge: "LIMITED",
     shortDescription:
       "Bring strategy, focus, and thoughtful competition to recreational spaces with Chess from AnyPro. One of the most recognised Board Games, chess encourages players to think ahead, plan moves, solve problems, and make strategic decisions while enjoying an engaging, screen-free activity.",
 
@@ -508,6 +513,8 @@ export const products = [
     slug: "mahjong-game",
     category: "Board Game",
     subcategory: "Mahjong",
+     color: "#FCE8F3",
+       badge: "LIMITED",
 
     rating: 4.8,
     reviews: 97,
@@ -571,6 +578,8 @@ export const products = [
     slug: "sports-goods",
     category: "Sports Goods",
     subcategory: "Sports Equipment",
+     color: "#FCE8F3",
+       badge: "LIMITED",
 
     rating: 4.7,
     reviews: 138,
@@ -634,6 +643,8 @@ export const products = [
   slug: "activity-recreational-games",
   category: "Activity & Recreational Games",
   subcategory: "Activity & Recreational Games",
+   color: "#FCE8F3",
+       badge: "LIMITED",
 
   rating: 4.8,
   reviews: 115,
