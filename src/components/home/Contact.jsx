@@ -41,7 +41,7 @@ export default function ContactCTA() {
                     platform: "Anypro Contact Page",
                     platformEmail: "info@toyparkindia.com",
                     name: trimmedFullName,
-                    email: trimmedEmail,
+                    email: trimmedEmail || "N/A" ,
                     company: "NA",
                     phone: trimmedPhone,
                     product: trimmedProduct,
@@ -220,6 +220,7 @@ export default function ContactCTA() {
                                         <input
                                             type="tel"
                                             name="phone"
+                                            maxLength={10}
                                             placeholder="Phone number"
                                             required
                                             className="h-12 w-full rounded-xl border border-black/10 bg-[#f8f8f8] pl-11 pr-4 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#FF1744] focus:bg-white focus:ring-2 focus:ring-[#FF1744]/10"
@@ -238,7 +239,7 @@ export default function ContactCTA() {
                                         type="email"
                                         name="email"
                                         placeholder="Email address"
-                                        required
+                                        
                                         className="h-12 w-full rounded-xl border border-black/10 bg-[#f8f8f8] pl-11 pr-4 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#FF1744] focus:bg-white focus:ring-2 focus:ring-[#FF1744]/10"
                                     />
                                 </div>

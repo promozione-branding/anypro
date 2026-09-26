@@ -456,45 +456,58 @@ export default function Footer() {
 
                 {/* Bottom */}
                 <motion.div
-                    initial={{
-                        opacity: 0,
-                    }}
-                    whileInView={{
-                        opacity: 1,
-                    }}
-                    viewport={{
-                        once: true,
-                    }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.3,
-                    }}
-                    className="mt-5 flex flex-col gap-5 border-t border-neutral-800 pt-6 sm:flex-row sm:items-center sm:justify-between"
-                >
+  initial={{
+    opacity: 0,
+  }}
+  whileInView={{
+    opacity: 1,
+  }}
+  viewport={{
+    once: true,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.3,
+  }}
+  className="relative mt-5 flex flex-col gap-5 border-t border-neutral-800 pt-6 sm:flex-row sm:items-center sm:justify-between"
+>
+  {/* Copyright */}
+  <p className="text-xs text-center text-neutral-400">
+    © 2026 GAME. All rights reserved.
+  </p>
 
-                    <p className="text-xs text-neutral-400">
-                        © 2026 GAME. All rights reserved.
-                    </p>
+  {/* Center */}
+  <div className="text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+    <span className="text-xs text-neutral-400">
+      Website Designed By{" "}
+      <a
+        href="https://inquirybazaar.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-white transition hover:text-red-500"
+      >
+        Inquiry Bazaar Pvt. Ltd.
+      </a>
+    </span>
+  </div>
 
-                    <div className="flex gap-6">
+  {/* Right */}
+  <div className="flex justify-center items-center gap-6">
+    <a
+      href="#"
+      className="text-xs text-neutral-400 transition hover:text-white"
+    >
+      Privacy
+    </a>
 
-                        <a
-                            href="#"
-                            className="text-xs text-neutral-400 transition hover:text-white"
-                        >
-                            Privacy
-                        </a>
-
-                        <a
-                            href="#"
-                            className="text-xs text-neutral-400 transition hover:text-white"
-                        >
-                            Terms
-                        </a>
-
-                    </div>
-
-                </motion.div>
+    <a
+      href="#"
+      className="text-xs text-neutral-400 transition hover:text-white"
+    >
+      Terms
+    </a>
+  </div>
+</motion.div>
 
             </div>
         </footer>
