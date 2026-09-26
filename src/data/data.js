@@ -652,7 +652,7 @@ export const products = [
   shortDescription:
     "Make every play session more engaging with Activity & Recreational Games from AnyPro. Designed to encourage movement, interaction, creativity, coordination, and problem-solving, this range brings together fun activities that keep children and players actively involved.",
 
-  images: [],
+  images: ["/products/games.webp"],
 
   features: [
     "Interactive & Engaging",
