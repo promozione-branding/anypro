@@ -16,11 +16,13 @@ import { Cloud, Sun, Star, Balloon } from "../svg/svg";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const categories = [
   {
     id: 1,
     title: "Table Games",
+
     description:
       "Classic games, exciting challenges and fun moments for every player.",
     icon: Dice5,
@@ -28,9 +30,8 @@ const categories = [
     color: "#FF6B35",
     bg: "linear-gradient(135deg, #fff0e8 0%, #ffd9c7 100%)",
     pattern: "table",
-    image:
-      "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1000&q=85",
-  },
+    href:"/products/foosball-table",
+    image:"/products/foos.webp"  },
 
   {
     id: 2,
@@ -42,9 +43,8 @@ const categories = [
     color: "#7C5CFC",
     bg: "linear-gradient(135deg, #f0edff 0%, #ddd5ff 100%)",
     pattern: "board",
-    image:
-      "https://images.unsplash.com/photo-1629760946220-5693ee4c46ac?auto=format&fit=crop&w=1000&q=85",
-  },
+    href:"/products/chess",
+    image:"/products/chess.webp"  },
 
   {
     id: 3,
@@ -56,9 +56,8 @@ const categories = [
     color: "#14A878",
     bg: "linear-gradient(135deg, #e6faf3 0%, #c8f1e1 100%)",
     pattern: "sports",
-    image:
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=85",
-  },
+    href:"/products/sports-goods",
+    image:"/products/sportsgood.webp"  },
 
   {
     id: 4,
@@ -70,9 +69,8 @@ const categories = [
     color: "#F2B705",
     bg: "linear-gradient(135deg, #fff8dc 0%, #ffed9e 100%)",
     pattern: "activity",
-    image:
-      "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=1000&q=85",
-  },
+    href:"products/activity-recreational-games",
+    image:"/products/games.webp"  },
 ];
 
 /* ============================================================
@@ -106,7 +104,9 @@ function CategoryCard({ category, index }) {
   const Icon = category.icon;
 
   return (
-    <motion.article
+    <Link 
+          href={category.href}
+
       initial={{
         opacity: 0,
         y: 60,
@@ -366,7 +366,7 @@ function CategoryCard({ category, index }) {
           </div>
         </div>
       </div>
-    </motion.article>
+    </Link>
   );
 }
 
@@ -785,13 +785,14 @@ export default function ToyParkCategories() {
             </span>
           </div>
 
-          <motion.button
-            whileHover={{
-              scale: 1.04,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
+          <Link
+          href="/products"
+// whileHover={{
+//               scale: 1.04,
+//             }}
+//             whileTap={{
+//               scale: 0.97,
+//             }}
             className="
               group
               inline-flex
@@ -826,7 +827,7 @@ export default function ToyParkCategories() {
             >
               <ArrowRight size={15} />
             </span>
-          </motion.button>
+          </Link>
         </div>
       </div>
     </section>

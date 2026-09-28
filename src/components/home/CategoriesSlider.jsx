@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import { ArrowLeft, ArrowRight, Clock3, } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock3 } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { categories } from "@/data/data";
@@ -80,8 +80,7 @@ function CategoryCard({ item }) {
           shadow-[0_15px_45px_rgba(0,0,0,0.12)]
         "
         style={{
-          clipPath:
-            "polygon(12% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 16%)",
+          clipPath: "polygon(12% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 16%)",
         }}
       >
         <div className="flex flex-col items-center text-center">
@@ -100,11 +99,7 @@ function CategoryCard({ item }) {
               rotate: -5,
             }}
           >
-            <Icon
-              size={48}
-              strokeWidth={1.7}
-              className="text-[#ff1744]"
-            />
+            <Icon size={48} strokeWidth={1.7} className="text-[#ff1744]" />
           </motion.div>
 
           {/* TITLE */}
@@ -140,12 +135,6 @@ function CategoryCard({ item }) {
 
           {/* CTA */}
           <motion.button
-            whileHover={{
-              scale: 1.04,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
             className="
               mt-6
               flex
@@ -157,15 +146,17 @@ function CategoryCard({ item }) {
               text-sm
               font-bold
               uppercase
+              hover:scale-105
+              transition-all
+              duration-100
+
               tracking-wide
               text-white
               shadow-[0_12px_25px_rgba(255,23,68,0.25)]
-              transition-colors
               hover:bg-[#e90032]
             "
           >
             Explore
-
             <ArrowRight size={17} />
           </motion.button>
         </div>
@@ -199,7 +190,7 @@ export default function CategoriesSlider() {
           y: 0,
           opacity: 1,
           duration: 0.8,
-        }
+        },
       )
         .fromTo(
           paragraphRef.current,
@@ -212,7 +203,7 @@ export default function CategoriesSlider() {
             opacity: 1,
             duration: 0.6,
           },
-          "-=0.45"
+          "-=0.45",
         )
         .fromTo(
           navigationRef.current,
@@ -225,7 +216,7 @@ export default function CategoriesSlider() {
             opacity: 1,
             duration: 0.5,
           },
-          "-=0.3"
+          "-=0.3",
         );
     }, sectionRef);
 
@@ -362,10 +353,7 @@ export default function CategoriesSlider() {
             ease: "easeInOut",
           }}
         >
-          <Star
-            size={32}
-            color="#FF1744"
-          />
+          <Star size={32} color="#FF1744" />
         </motion.div>
 
         {/* YELLOW STAR */}
@@ -385,10 +373,7 @@ export default function CategoriesSlider() {
             ease: "easeInOut",
           }}
         >
-          <Star
-            size={28}
-            color="#FFD43B"
-          />
+          <Star size={28} color="#FFD43B" />
         </motion.div>
 
         {/* PURPLE STAR */}
@@ -409,10 +394,7 @@ export default function CategoriesSlider() {
             ease: "easeInOut",
           }}
         >
-          <Star
-            size={22}
-            color="#8B5CF6"
-          />
+          <Star size={22} color="#8B5CF6" />
         </motion.div>
 
         {/* BALLOON */}
@@ -544,7 +526,6 @@ export default function CategoriesSlider() {
         </div>
       </div>
 
-
       <div className="relative z-10 mx-auto max-w-[1500px]">
         <div
           className="
@@ -584,7 +565,6 @@ export default function CategoriesSlider() {
                 "
               >
                 Explore Toy Park
-
                 <span
                   className="
                     absolute
@@ -596,7 +576,6 @@ export default function CategoriesSlider() {
                     [clip-path:polygon(0_0,100%_50%,0_100%)]
                   "
                 />
-
                 <span
                   className="
                     absolute
@@ -628,10 +607,8 @@ export default function CategoriesSlider() {
             >
               Discover Our
               <br />
-
               <span className="relative inline-block text-[#ff1744]">
                 Play Categories
-
                 {/* UNDERLINE */}
                 <svg
                   className="

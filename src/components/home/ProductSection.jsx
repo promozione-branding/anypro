@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Cloud, Sun, Star, Balloon } from "../svg/svg";
 import { products } from "@/data/data";
+import Link from "next/link";
 
 const ProductCard = ({ product, wishlist, setWishlist, onCart }) => {
     const [added, setAdded] = useState(false);
@@ -44,7 +45,7 @@ const ProductCard = ({ product, wishlist, setWishlist, onCart }) => {
             }}
         >
             {/* Card */}
-            <div className="relative overflow-hidden rounded-[24px] bg-white border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
+            <Link href={`/products/${product.slug}`} className="relative overflow-hidden rounded-[24px] bg-white border border-neutral-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_15px_45px_rgba(0,0,0,0.08)]">
 
                 {/* --------------------------------
                     IMAGE
@@ -82,7 +83,7 @@ const ProductCard = ({ product, wishlist, setWishlist, onCart }) => {
                         </div>
 
                         {/* Wishlist */}
-                        <motion.button
+                        {/* <motion.button
                             whileTap={{ scale: 0.82 }}
                             whileHover={{ scale: 1.08 }}
                             onClick={toggleWishlist}
@@ -113,7 +114,7 @@ const ProductCard = ({ product, wishlist, setWishlist, onCart }) => {
                                     }
                                 />
                             </motion.div>
-                        </motion.button>
+                        </motion.button> */}
 
                         {/* Quick Cart Icon */}
                         <motion.button
@@ -205,7 +206,7 @@ const ProductCard = ({ product, wishlist, setWishlist, onCart }) => {
                     {/* Price row */}
                     
                 </div>
-            </div>
+            </Link>
         </motion.article>
     );
 };
@@ -323,7 +324,7 @@ export default function ProductSection() {
                     </div>
 
                     {/* Cart */}
-                    <motion.button
+                    {/* <motion.button
                         whileHover={{ y: -3 }}
                         whileTap={{ scale: 0.97 }}
                         className="relative flex w-fit items-center gap-3 rounded-full bg-black px-6 py-4 text-sm font-bold text-white"
@@ -349,7 +350,7 @@ export default function ProductSection() {
                                 </motion.span>
                             )}
                         </AnimatePresence>
-                    </motion.button>
+                    </motion.button> */}
                 </div>
             </div>
 
@@ -386,7 +387,7 @@ export default function ProductSection() {
                             spaceBetween: 25,
                         },
                     }}
-                    className="!overflow-visible"
+                    className="!overflow-hidden"
                 >
                     {products.map((product) => (
                         <SwiperSlide key={product.id}>
