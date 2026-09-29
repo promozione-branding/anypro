@@ -65,7 +65,7 @@ export default function ContactCTA() {
     };
 
     return (
-        <section className="relative overflow-hidden border-t border-red-300 bg-white py-10 sm:py-12 lg:py-15">
+        <section className="relative overflow-hidden border-t border-red-300 bg-white py-6 sm:py-12 ">
             {/* Background decoration */}
             <div className="pointer-events-none absolute left-0 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF1744]/10 blur-3xl" />
 
@@ -79,7 +79,7 @@ export default function ContactCTA() {
 
                     <div className="pointer-events-none absolute -bottom-32 right-0 h-80 w-80 rounded-full bg-[#FF1744]/10 blur-[100px]" />
 
-                    <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+                    <div className="relative z-10 grid items-center gap-5 lg:grid-cols-[0.8fr_1.2fr] md:gap-14">
                         {/* LEFT CONTENT */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}

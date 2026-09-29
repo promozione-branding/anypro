@@ -293,7 +293,7 @@ export default function Product({product}) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="relative z-10 mt-20 rounded-[2rem] border border-black/10 bg-[#f7f7f7] p-6 sm:p-8"
+          className="relative z-10 mt-10 rounded-[2rem] border border-black/10 bg-[#f7f7f7] p-6 sm:p-8"
         >
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#FF1744]">
             Product Overview

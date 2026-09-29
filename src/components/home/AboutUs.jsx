@@ -93,7 +93,7 @@ export default function AboutUs() {
 
             <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-                <div className="grid items-center gap-14 md:grid-cols-2 lg:gap-10 xl:gap-16">
+                <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10 ">
 
                     {/* =================================================
                         LEFT IMAGE AREA

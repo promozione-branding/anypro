@@ -290,7 +290,7 @@ export default function Footer() {
             </div>
 
             {/* Main Footer */}
-            <div className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-15">
+            <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-8 sm:py-12 md:px-10 md:py-13">
 
                 {/* Footer Heading */}
                 <motion.div

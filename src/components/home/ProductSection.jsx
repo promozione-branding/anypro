@@ -404,7 +404,7 @@ export default function ProductSection() {
                 {/* --------------------------------
                     Slider controls
                 -------------------------------- */}
-                <div className="mt-10 flex items-center justify-between">
+                <div className="mt-5 flex items-center justify-between">
                     <div className="products-pagination !static !w-auto" />
 
                     <div className="flex items-center gap-3">

@@ -318,13 +318,15 @@ export default function AnyproCTA() {
                                         border
                                         border-white/10
                                         bg-white/10
-                                        px-4
-                                        py-4
+                                        px-2
+                                        md:px-4
+                                        py-3
+                                        md:py-4
                                         transition-colors
                                         hover:bg-white/15
                                     "
                                 >
-                                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/15">
+                                    <div className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/15">
                                         <MessageCircle
                                             size={20}
                                             className="text-[#25D366]"
@@ -360,13 +362,15 @@ export default function AnyproCTA() {
                                         border
                                         border-white/10
                                         bg-white/10
-                                        px-4
-                                        py-4
+                                        px-2
+                                        md:px-4
+                                        py-3
+                                        md:py-4
                                         transition-colors
                                         hover:bg-white/15
                                     "
                                 >
-                                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#7C5CFC]/15">
+                                    <div className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-xl bg-[#7C5CFC]/15">
                                         <Phone
                                             size={19}
                                             className="text-[#A993FF]"

@@ -54,7 +54,7 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-white pt-30">
       {/* HERO */}
-      <section className="relative overflow-hidden pb-14 sm:pb-16">
+      <section className="relative overflow-hidden pb-6 md:pb-10">
         {/* Background decoration */}
         <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#FF1744]/10 blur-3xl" />
 
@@ -94,9 +94,9 @@ export default function Contact() {
       </section>
 
       {/* CONTACT INFO + MAP */}
-      <section className="pb-16 sm:pb-20 lg:pb-24">
+      <section className="py-6  md:py-10">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             {/* CONTACT DETAILS */}
             <motion.div
               initial={{

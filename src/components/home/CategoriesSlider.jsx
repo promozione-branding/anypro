@@ -21,7 +21,7 @@ function CategoryCard({ item }) {
         duration: 0.3,
         ease: "easeOut",
       }}
-      className="group relative h-[500px] overflow-visible"
+      className="group relative px-2 h-[500px] overflow-visible"
     >
       {/* IMAGE */}
       <div className="relative h-[365px] overflow-hidden bg-neutral-200">
@@ -716,7 +716,7 @@ export default function CategoriesSlider() {
                 nextEl: ".toy-next",
               }}
               spaceBetween={28}
-              slidesPerView={1.05}
+              slidesPerView={1}
               speed={750}
               grabCursor
               loop
@@ -761,7 +761,7 @@ export default function CategoriesSlider() {
                   spaceBetween: 30,
                 },
               }}
-              className="!overflow-visible"
+              className="!overflow-hidden"
             >
               {categories.map((item, index) => (
                 <SwiperSlide key={`${item.title}-${index}`}>

@@ -69,7 +69,7 @@ export default function EveryGameSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-[100vh] min-h-[620px] w-full overflow-hidden bg-[#f5f5f3]"
+            className="relative h-[100vh] min-h-[570px] w-full overflow-hidden bg-[#f5f5f3]"
         >
             {/* Content */}
             <div className="absolute inset-0 z-10">

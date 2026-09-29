@@ -103,7 +103,7 @@ function CountUp({ value, suffix = "" }) {
 
 export default function About() {
   return (<>
-    <div className="relative z-10 pt-32">
+    <div className="relative z-10 pt-10  md:pt-25">
       <div className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[470px] lg:min-h-[500px]">
 
         {/* Red glow */}
@@ -143,7 +143,7 @@ export default function About() {
               transition={{
                 duration: 0.7,
               }}
-              className="relative z-30 px-7 py-12 sm:px-10 lg:px-14"
+              className="relative z-30 px-7 py-6 sm:px-10 lg:px-14"
             >
               <motion.div
                 animate={{
@@ -209,7 +209,7 @@ export default function About() {
                 duration: 0.8,
                 delay: 0.15,
               }}
-              className="relative hidden h-full min-h-[420px] lg:block"
+              className="relative hidden h-full min-h-[400px] lg:block"
             >
 
               {/* White organic background */}
@@ -292,7 +292,7 @@ export default function About() {
         <Cloud size={100} />
       </div>
 
-      <section className="relative z-10 px-5 py-10 sm:px-8 lg:py-15">
+      <section className="relative z-10 px-5 py-6 sm:px-8 md:py-13">
         <div className="mx-auto max-w-7xl">
 
           <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -476,7 +476,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative z-10 px-5 py-20 sm:px-8 lg:py-28">
+      <section className="relative z-10 px-5 py-6 sm:px-8 md:py-13">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
           {/* IMAGE */}
@@ -591,7 +591,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-black px-5 py-20 text-white sm:px-8 lg:py-24">
+      <section className="relative z-10 bg-black px-5 py-6 text-white sm:px-8 md:py-13">
 
         <div className="mx-auto max-w-7xl">
 
@@ -650,7 +650,7 @@ export default function About() {
                     duration: 0.5,
                     delay: index * 0.08,
                   }}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF1744]/50"
+                  className="group rounded-2xl border border-white/10 bg-white/[0.04] p-4 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF1744]/50"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FF1744] text-white">
                     <Icon size={20} />
@@ -671,7 +671,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative z-10 px-5 py-16 sm:px-8 lg:py-20">
+      <section className="relative z-10 px-5 py-6 sm:px-8 md:py-13">
 
         <motion.div
           initial={{
