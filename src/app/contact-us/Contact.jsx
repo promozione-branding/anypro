@@ -54,7 +54,7 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-white pt-30">
       {/* HERO */}
-      <section className="relative overflow-hidden pb-6 md:pb-10">
+      <section className="relative  pt-6 overflow-hidden pb-6 md:pb-10">
         {/* Background decoration */}
         <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-[#FF1744]/10 blur-3xl" />
 

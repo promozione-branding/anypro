@@ -143,7 +143,7 @@ export default function About() {
               transition={{
                 duration: 0.7,
               }}
-              className="relative z-30 px-7 py-6 sm:px-10 lg:px-14"
+              className="relative z-30 px-7 mt-10 py-9 sm:px-10 lg:px-14"
             >
               <motion.div
                 animate={{
