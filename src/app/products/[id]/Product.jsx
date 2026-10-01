@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 
 import { Cloud, Sun, Star } from "@/components/svg/svg";
+import { FaWhatsapp } from "react-icons/fa";
+import Popup from "@/components/layout/Popup";
 
 // const product = {
 //   name: "Air Hockey Table",
@@ -73,7 +75,9 @@ import { Cloud, Sun, Star } from "@/components/svg/svg";
 //   ],
 // };
 
-export default function Product({product}) {
+export default function Product({ product }) {
+  const [open, setOpen] = useState(false);
+
   const [activeImage, setActiveImage] = useState(0);
 
   const hasImages = product.images.length > 0;
@@ -82,7 +86,7 @@ export default function Product({product}) {
     if (!hasImages) return;
 
     setActiveImage((current) =>
-      current === product.images.length - 1 ? 0 : current + 1
+      current === product.images.length - 1 ? 0 : current + 1,
     );
   };
 
@@ -90,15 +94,15 @@ export default function Product({product}) {
     if (!hasImages) return;
 
     setActiveImage((current) =>
-      current === 0 ? product.images.length - 1 : current - 1
+      current === 0 ? product.images.length - 1 : current - 1,
     );
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hi, I'm interested in the ${product.name}. Please share more details.`
+    `Hi, I'm interested in the ${product.name}. Please share more details.`,
   );
 
-  const whatsappUrl = `https://wa.me/917949342217?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/919811117654?text=${whatsappMessage}`;
 
   return (
     <main className="relative min-h-screen bg-white pt-32 pb-10">
@@ -237,10 +241,7 @@ export default function Product({product}) {
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   {product.specifications.slice(0, 4).map(([label, value]) => (
-                    <div
-                      key={label}
-                      className="rounded-xl bg-[#f7f7f7] p-4"
-                    >
+                    <div key={label} className="rounded-xl bg-[#f7f7f7] p-4">
                       <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#FF1744]">
                         {label}
                       </p>
@@ -255,6 +256,7 @@ export default function Product({product}) {
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   <button
+                    onClick={() => setOpen(true)}
                     type="button"
                     className="group flex h-13 items-center justify-center gap-2 rounded-xl bg-[#FF1744] px-5 text-sm font-bold text-white transition-all duration-300 hover:bg-black"
                   >
@@ -272,7 +274,7 @@ export default function Product({product}) {
                     rel="noreferrer"
                     className="flex h-13 items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-5 text-sm font-bold text-black transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
                   >
-                    <MessageCircle size={18} />
+                    <FaWhatsapp size={25} />
                     WhatsApp Us
                   </a>
                 </div>
@@ -462,6 +464,7 @@ export default function Product({product}) {
 
             <div className="flex w-full gap-2 sm:w-auto">
               <button
+                onClick={() => setOpen(true)}
                 type="button"
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-black sm:flex-none"
               >
@@ -475,13 +478,15 @@ export default function Product({product}) {
                 rel="noreferrer"
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-black hover:text-white sm:flex-none"
               >
-                <MessageCircle size={17} />
+                <FaWhatsapp size={25} />
                 WhatsApp
               </a>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <Popup isOpen={open} onClose={() => setOpen(false)} />
     </main>
   );
 }
