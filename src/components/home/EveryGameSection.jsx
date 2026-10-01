@@ -9,15 +9,18 @@ import CountUp from "react-countup";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function EveryGameSection() {
+    const wrapperRef = useRef(null);
     const sectionRef = useRef(null);
     const lottieRef = useRef(null);
 
     useLayoutEffect(() => {
-        let animation;
-        let lottieTween;
+        let animation = null;
+        let lottieTween = null;
 
         const ctx = gsap.context(() => {
-            if (!lottieRef.current || !sectionRef.current) return;
+            if (!wrapperRef.current || !sectionRef.current || !lottieRef.current) {
+                return;
+            }
 
             animation = lottie.loadAnimation({
                 container: lottieRef.current,
@@ -32,7 +35,7 @@ export default function EveryGameSection() {
 
             animation.addEventListener("DOMLoaded", () => {
                 /*
-                 * Your JSON has:
+                 * FOOTBALL JSON
                  *
                  * 0   → 60   = Bounce 1
                  * 60  → 120  = Bounce 2
@@ -40,28 +43,38 @@ export default function EveryGameSection() {
                  * 180 → 240  = Bounce 4
                  * 240 → 300  = Bounce 5
                  *
-                 * Therefore:
-                 * 180 = exactly 3 complete bounces
+                 * We stop at frame 180.
                  */
 
-                const THREE_BOUNCES_FRAME = 180;
+                const THREE_BOUNCES = 180;
 
                 const playhead = {
                     frame: 0,
                 };
 
+                // Always start at frame 0
+                animation.goToAndStop(0, true);
+
                 lottieTween = gsap.to(playhead, {
-                    frame: THREE_BOUNCES_FRAME,
+                    frame: THREE_BOUNCES,
+
                     ease: "none",
 
                     scrollTrigger: {
-                        trigger: sectionRef.current,
+                        trigger: wrapperRef.current,
 
                         start: "top top",
+
+                        // Total scroll distance while pinned
                         end: "+=1600",
 
-                        pin: true,
+                        pin: sectionRef.current,
+
+                        pinSpacing: true,
+
                         scrub: 1,
+
+                        anticipatePin: 1,
 
                         invalidateOnRefresh: true,
 
@@ -76,170 +89,194 @@ export default function EveryGameSection() {
                     },
                 });
 
-                // Make sure the initial frame is correct
-                animation.goToAndStop(0, true);
-
-                ScrollTrigger.refresh();
+                // Refresh AFTER Lottie has completely loaded
+                requestAnimationFrame(() => {
+                    ScrollTrigger.refresh();
+                });
             });
-        }, sectionRef);
+        }, wrapperRef);
 
         return () => {
             if (lottieTween) {
                 lottieTween.kill();
+                lottieTween = null;
             }
-
-            ctx.revert();
 
             if (animation) {
                 animation.destroy();
                 animation = null;
             }
+
+            ctx.revert();
         };
     }, []);
 
     return (
-        <section
-            ref={sectionRef}
-            className="relative h-[100vh] min-h-[570px] w-full overflow-hidden bg-[#f5f5f3]"
+        /*
+         * OUTER WRAPPER
+         *
+         * This gives ScrollTrigger a stable layout element.
+         */
+        <div
+            ref={wrapperRef}
+            className="relative w-full"
         >
             {/* =========================
-                CONTENT
+                PINNED SECTION
             ========================= */}
-            <div className="absolute inset-0 z-10">
-                <div className="mx-auto flex h-full w-[calc(100%-2rem)] max-w-7xl items-center sm:w-[calc(100%-3rem)]">
-                    <div className="max-w-xl">
+            <section
+                ref={sectionRef}
+                className="
+                    relative
+                    flex
+                    h-[100svh]
+                    min-h-[570px]
+                    w-full
+                    items-center
+                    overflow-hidden
+                    bg-[#f5f5f3]
+                "
+            >
+                {/* =========================
+                    CONTENT
+                ========================= */}
+                <div className="absolute inset-0 z-10">
+                    <div className="mx-auto flex h-full w-[calc(100%-2rem)] max-w-7xl items-center sm:w-[calc(100%-3rem)]">
+                        <div className="max-w-xl">
 
-                        {/* Eyebrow */}
-                        <span className="mb-3 inline-block text-[10px] font-bold tracking-[0.22em] text-neutral-500 sm:text-xs">
-                            BUILT FOR THE GAME
-                        </span>
-
-                        {/* Heading */}
-                        <h2 className="text-5xl font-extrabold leading-[0.9] tracking-[-0.055em] text-neutral-900 sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
-                            One passion.
-                            <br />
-
-                            <span className="text-neutral-500">
-                                Every game.
+                            {/* Eyebrow */}
+                            <span className="mb-3 inline-block text-[10px] font-bold tracking-[0.22em] text-neutral-500 sm:text-xs">
+                                BUILT FOR THE GAME
                             </span>
-                        </h2>
 
-                        {/* Description */}
-                        <p className="mt-4 max-w-md text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
-                            From the court to the field and the beach, we
-                            create products for people who live and breathe
-                            sport.
-                        </p>
+                            {/* Heading */}
+                            <h2 className="text-5xl font-extrabold leading-[0.9] tracking-[-0.055em] text-neutral-900 sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+                                One passion.
+                                <br />
 
-                        {/* =========================
-                            STATS
-                        ========================= */}
-                        <div className="mt-7 grid max-w-md grid-cols-2 border-t border-neutral-300">
+                                <span className="text-neutral-500">
+                                    Every game.
+                                </span>
+                            </h2>
 
-                            {/* Experience */}
-                            <div className="min-h-[100px] border-b border-r border-neutral-300 py-5 pr-7">
-                                <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-                                    <CountUp
-                                        end={10}
-                                        duration={2}
-                                        enableScrollSpy
-                                        scrollSpyOnce
-                                    />
-                                    +
+                            {/* Description */}
+                            <p className="mt-4 max-w-md text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
+                                From the court to the field and the beach, we
+                                create products for people who live and breathe
+                                sport.
+                            </p>
+
+                            {/* =========================
+                                STATS
+                            ========================= */}
+                            <div className="mt-7 grid max-w-md grid-cols-2 border-t border-neutral-300">
+
+                                {/* Experience */}
+                                <div className="min-h-[100px] border-b border-r border-neutral-300 py-5 pr-7">
+                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                        <CountUp
+                                            end={10}
+                                            duration={2}
+                                            enableScrollSpy
+                                            scrollSpyOnce
+                                        />
+                                        +
+                                    </div>
+
+                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                        Years Experience
+                                    </p>
                                 </div>
 
-                                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
-                                    Years Experience
-                                </p>
-                            </div>
+                                {/* Clients */}
+                                <div className="min-h-[100px] border-b border-neutral-300 py-5 pl-7">
+                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                        <CountUp
+                                            end={250}
+                                            duration={2}
+                                            enableScrollSpy
+                                            scrollSpyOnce
+                                        />
+                                        +
+                                    </div>
 
-                            {/* Clients */}
-                            <div className="min-h-[100px] border-b border-neutral-300 py-5 pl-7">
-                                <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-                                    <CountUp
-                                        end={250}
-                                        duration={2}
-                                        enableScrollSpy
-                                        scrollSpyOnce
-                                    />
-                                    +
+                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                        Clients Served
+                                    </p>
                                 </div>
 
-                                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
-                                    Clients Served
-                                </p>
-                            </div>
+                                {/* Projects */}
+                                <div className="min-h-[100px] border-r border-neutral-300 py-5 pr-7">
+                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                        <CountUp
+                                            end={500}
+                                            duration={2}
+                                            enableScrollSpy
+                                            scrollSpyOnce
+                                        />
+                                        +
+                                    </div>
 
-                            {/* Projects */}
-                            <div className="min-h-[100px] border-r border-neutral-300 py-5 pr-7">
-                                <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-                                    <CountUp
-                                        end={500}
-                                        duration={2}
-                                        enableScrollSpy
-                                        scrollSpyOnce
-                                    />
-                                    +
+                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                        Projects Delivered
+                                    </p>
                                 </div>
 
-                                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
-                                    Projects Delivered
-                                </p>
-                            </div>
+                                {/* Athletes */}
+                                <div className="min-h-[100px] py-5 pl-7">
+                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                        <CountUp
+                                            end={50}
+                                            duration={2}
+                                            enableScrollSpy
+                                            scrollSpyOnce
+                                        />
+                                        K+
+                                    </div>
 
-                            {/* Athletes */}
-                            <div className="min-h-[100px] py-5 pl-7">
-                                <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
-                                    <CountUp
-                                        end={50}
-                                        duration={2}
-                                        enableScrollSpy
-                                        scrollSpyOnce
-                                    />
-                                    K+
+                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                        Athletes Reached
+                                    </p>
                                 </div>
 
-                                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
-                                    Athletes Reached
-                                </p>
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* =========================
-                FOOTBALL LOTTIE
-            ========================= */}
-            <div
-                ref={lottieRef}
-                className="
-                    absolute
-                    right-[-8%]
-                    top-1/2
-                    z-0
-                    w-[min(60vw,780px)]
-                    -translate-y-1/2
+                {/* =========================
+                    FOOTBALL
+                ========================= */}
+                <div
+                    ref={lottieRef}
+                    className="
+                        pointer-events-none
+                        absolute
+                        right-[-8%]
+                        top-1/2
+                        z-0
+                        w-[min(60vw,780px)]
+                        -translate-y-1/2
 
-                    sm:right-[-4%]
-                    sm:w-[min(57vw,800px)]
+                        sm:right-[-4%]
+                        sm:w-[min(57vw,800px)]
 
-                    lg:right-[0%]
-                    lg:w-[min(50vw,820px)]
-                "
-            />
+                        lg:right-0
+                        lg:w-[min(50vw,820px)]
+                    "
+                />
 
-            {/* =========================
-                SCROLL HINT
-            ========================= */}
-            <div className="absolute bottom-[4%] left-1/2 z-20 -translate-x-1/2 text-center">
-                <div className="mx-auto mb-2 h-6 w-px bg-neutral-300" />
+                {/* =========================
+                    SCROLL HINT
+                ========================= */}
+                <div className="pointer-events-none absolute bottom-[4%] left-1/2 z-20 -translate-x-1/2 text-center">
+                    <div className="mx-auto mb-2 h-6 w-px bg-neutral-300" />
 
-                <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">
-                    Scroll to play
-                </p>
-            </div>
-        </section>
+                    <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">
+                        Scroll to play
+                    </p>
+                </div>
+            </section>
+        </div>
     );
 }
