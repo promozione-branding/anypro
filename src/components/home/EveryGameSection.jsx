@@ -35,15 +35,17 @@ export default function EveryGameSection() {
 
             animation.addEventListener("DOMLoaded", () => {
                 /*
-                 * FOOTBALL JSON
+                 * ==========================================
+                 * FOOTBALL ANIMATION
+                 * ==========================================
+                 *
+                 * JSON = 300 frames
                  *
                  * 0   → 60   = Bounce 1
                  * 60  → 120  = Bounce 2
                  * 120 → 180  = Bounce 3
-                 * 180 → 240  = Bounce 4
-                 * 240 → 300  = Bounce 5
                  *
-                 * We stop at frame 180.
+                 * Stop at frame 180.
                  */
 
                 const THREE_BOUNCES = 180;
@@ -52,7 +54,6 @@ export default function EveryGameSection() {
                     frame: 0,
                 };
 
-                // Always start at frame 0
                 animation.goToAndStop(0, true);
 
                 lottieTween = gsap.to(playhead, {
@@ -65,16 +66,13 @@ export default function EveryGameSection() {
 
                         start: "top top",
 
-                        // Total scroll distance while pinned
-                        end: "+=1600",
-
-                        pin: sectionRef.current,
-
-                        pinSpacing: true,
+                        /*
+                         * The wrapper controls the total
+                         * scrolling distance.
+                         */
+                        end: "bottom bottom",
 
                         scrub: 1,
-
-                        anticipatePin: 1,
 
                         invalidateOnRefresh: true,
 
@@ -89,7 +87,6 @@ export default function EveryGameSection() {
                     },
                 });
 
-                // Refresh AFTER Lottie has completely loaded
                 requestAnimationFrame(() => {
                     ScrollTrigger.refresh();
                 });
@@ -113,33 +110,36 @@ export default function EveryGameSection() {
 
     return (
         /*
-         * OUTER WRAPPER
+         * ==================================================
+         * SCROLL AREA
          *
-         * This gives ScrollTrigger a stable layout element.
+         * 100vh = visible section
+         * 1600px = extra scroll distance
+         * ==================================================
          */
         <div
             ref={wrapperRef}
-            className="relative w-full"
+            className="relative h-[calc(100svh+1600px)] w-full"
         >
-            {/* =========================
-                PINNED SECTION
-            ========================= */}
+            {/* ==================================================
+                STICKY SECTION
+            ================================================== */}
             <section
                 ref={sectionRef}
                 className="
-                    relative
+                    sticky
+                    top-0
                     flex
                     h-[100svh]
                     min-h-[570px]
                     w-full
-                    items-center
                     overflow-hidden
                     bg-[#f5f5f3]
                 "
             >
-                {/* =========================
+                {/* ==================================================
                     CONTENT
-                ========================= */}
+                ================================================== */}
                 <div className="absolute inset-0 z-10">
                     <div className="mx-auto flex h-full w-[calc(100%-2rem)] max-w-7xl items-center sm:w-[calc(100%-3rem)]">
                         <div className="max-w-xl">
@@ -150,7 +150,19 @@ export default function EveryGameSection() {
                             </span>
 
                             {/* Heading */}
-                            <h2 className="text-5xl font-extrabold leading-[0.9] tracking-[-0.055em] text-neutral-900 sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+                            <h2
+                                className="
+                                    text-5xl
+                                    font-extrabold
+                                    leading-[0.9]
+                                    tracking-[-0.055em]
+                                    text-neutral-900
+
+                                    sm:text-6xl
+                                    lg:text-7xl
+                                    xl:text-[5.5rem]
+                                "
+                            >
                                 One passion.
                                 <br />
 
@@ -160,20 +172,57 @@ export default function EveryGameSection() {
                             </h2>
 
                             {/* Description */}
-                            <p className="mt-4 max-w-md text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
+                            <p
+                                className="
+                                    mt-4
+                                    max-w-md
+                                    text-sm
+                                    leading-6
+                                    text-neutral-600
+
+                                    sm:text-base
+                                    sm:leading-7
+                                "
+                            >
                                 From the court to the field and the beach, we
                                 create products for people who live and breathe
                                 sport.
                             </p>
 
-                            {/* =========================
+                            {/* ==================================================
                                 STATS
-                            ========================= */}
-                            <div className="mt-7 grid max-w-md grid-cols-2 border-t border-neutral-300">
-
+                            ================================================== */}
+                            <div
+                                className="
+                                    mt-7
+                                    grid
+                                    max-w-md
+                                    grid-cols-2
+                                    border-t
+                                    border-neutral-300
+                                "
+                            >
                                 {/* Experience */}
-                                <div className="min-h-[100px] border-b border-r border-neutral-300 py-5 pr-7">
-                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                <div
+                                    className="
+                                        min-h-[100px]
+                                        border-b
+                                        border-r
+                                        border-neutral-300
+                                        py-5
+                                        pr-7
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            text-3xl
+                                            font-extrabold
+                                            tracking-tight
+                                            text-neutral-900
+
+                                            sm:text-4xl
+                                        "
+                                    >
                                         <CountUp
                                             end={10}
                                             duration={2}
@@ -183,14 +232,42 @@ export default function EveryGameSection() {
                                         +
                                     </div>
 
-                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                    <p
+                                        className="
+                                            mt-1
+                                            text-[10px]
+                                            font-semibold
+                                            uppercase
+                                            tracking-[0.13em]
+                                            text-neutral-500
+
+                                            sm:text-xs
+                                        "
+                                    >
                                         Years Experience
                                     </p>
                                 </div>
 
                                 {/* Clients */}
-                                <div className="min-h-[100px] border-b border-neutral-300 py-5 pl-7">
-                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                <div
+                                    className="
+                                        min-h-[100px]
+                                        border-b
+                                        border-neutral-300
+                                        py-5
+                                        pl-7
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            text-3xl
+                                            font-extrabold
+                                            tracking-tight
+                                            text-neutral-900
+
+                                            sm:text-4xl
+                                        "
+                                    >
                                         <CountUp
                                             end={250}
                                             duration={2}
@@ -200,14 +277,42 @@ export default function EveryGameSection() {
                                         +
                                     </div>
 
-                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                    <p
+                                        className="
+                                            mt-1
+                                            text-[10px]
+                                            font-semibold
+                                            uppercase
+                                            tracking-[0.13em]
+                                            text-neutral-500
+
+                                            sm:text-xs
+                                        "
+                                    >
                                         Clients Served
                                     </p>
                                 </div>
 
                                 {/* Projects */}
-                                <div className="min-h-[100px] border-r border-neutral-300 py-5 pr-7">
-                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                <div
+                                    className="
+                                        min-h-[100px]
+                                        border-r
+                                        border-neutral-300
+                                        py-5
+                                        pr-7
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            text-3xl
+                                            font-extrabold
+                                            tracking-tight
+                                            text-neutral-900
+
+                                            sm:text-4xl
+                                        "
+                                    >
                                         <CountUp
                                             end={500}
                                             duration={2}
@@ -217,14 +322,40 @@ export default function EveryGameSection() {
                                         +
                                     </div>
 
-                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                    <p
+                                        className="
+                                            mt-1
+                                            text-[10px]
+                                            font-semibold
+                                            uppercase
+                                            tracking-[0.13em]
+                                            text-neutral-500
+
+                                            sm:text-xs
+                                        "
+                                    >
                                         Projects Delivered
                                     </p>
                                 </div>
 
                                 {/* Athletes */}
-                                <div className="min-h-[100px] py-5 pl-7">
-                                    <div className="text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+                                <div
+                                    className="
+                                        min-h-[100px]
+                                        py-5
+                                        pl-7
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            text-3xl
+                                            font-extrabold
+                                            tracking-tight
+                                            text-neutral-900
+
+                                            sm:text-4xl
+                                        "
+                                    >
                                         <CountUp
                                             end={50}
                                             duration={2}
@@ -234,19 +365,29 @@ export default function EveryGameSection() {
                                         K+
                                     </div>
 
-                                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-xs">
+                                    <p
+                                        className="
+                                            mt-1
+                                            text-[10px]
+                                            font-semibold
+                                            uppercase
+                                            tracking-[0.13em]
+                                            text-neutral-500
+
+                                            sm:text-xs
+                                        "
+                                    >
                                         Athletes Reached
                                     </p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* =========================
+                {/* ==================================================
                     FOOTBALL
-                ========================= */}
+                ================================================== */}
                 <div
                     ref={lottieRef}
                     className="
@@ -266,13 +407,30 @@ export default function EveryGameSection() {
                     "
                 />
 
-                {/* =========================
+                {/* ==================================================
                     SCROLL HINT
-                ========================= */}
-                <div className="pointer-events-none absolute bottom-[4%] left-1/2 z-20 -translate-x-1/2 text-center">
+                ================================================== */}
+                <div
+                    className="
+                        pointer-events-none
+                        absolute
+                        bottom-[4%]
+                        left-1/2
+                        z-20
+                        -translate-x-1/2
+                        text-center
+                    "
+                >
                     <div className="mx-auto mb-2 h-6 w-px bg-neutral-300" />
 
-                    <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">
+                    <p
+                        className="
+                            text-[9px]
+                            uppercase
+                            tracking-[0.3em]
+                            text-neutral-400
+                        "
+                    >
                         Scroll to play
                     </p>
                 </div>
