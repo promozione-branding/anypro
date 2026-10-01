@@ -15,38 +15,38 @@ const contactDetails = [
   {
     icon: MapPin,
     title: "Our Address",
-    value: "123 Main Street, New Delhi, India",
-    href: "https://www.google.com/maps",
+    value: "Karol Bagh New Delhi - 110005, India",
+    href: "https://share.google/ZKTuBiSjPJKVsqoIi",
   },
-  {
-    icon: MapPin,
-    title: "Branch Office",
-    value: "45 Business Park, Gurugram, Haryana",
-    href: "https://www.google.com/maps",
-  },
+  // {
+  //   icon: MapPin,
+  //   title: "Branch Office",
+  //   value: "45 Business Park, Gurugram, Haryana",
+  //   href: "https://www.google.com/maps",
+  // },
   {
     icon: Phone,
     title: "Call Us",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 98111 17654",
+    href: "tel:+919811117654",
   },
-  {
-    icon: Phone,
-    title: "Sales",
-    value: "+91 98765 12345",
-    href: "tel:+919876512345",
-  },
+  // {
+  //   icon: Phone,
+  //   title: "Sales",
+  //   value: "+91 98765 12345",
+  //   href: "tel:+919876512345",
+  // },
+  // {
+  //   icon: Mail,
+  //   title: "Email Us",
+  //   value: "hello@example.com",
+  //   href: "mailto:hello@example.com",
+  // },
   {
     icon: Mail,
-    title: "Email Us",
-    value: "hello@example.com",
-    href: "mailto:hello@example.com",
-  },
-  {
-    icon: Mail,
-    title: "Sales Email",
-    value: "sales@example.com",
-    href: "mailto:sales@example.com",
+    title: "Contact Email",
+    value: "info@toyparkindia.com",
+    href: "mailto:info@toyparkindia.com",
   },
 ];
 
@@ -222,7 +222,7 @@ export default function Contact() {
               {/* Google Maps */}
               <iframe
                 title="Our location on Google Maps"
-                src="https://www.google.com/maps?q=New+Delhi,+India&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4533970698362!2d77.1903261!3d28.64614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029f18a67aaf%3A0xcba7dda81a169753!2sToy%20Park%20Delhi%20Private%20Limited!5e0!3m2!1sen!2sin!4v1790837315008!5m2!1sen!2sin"
                 className="absolute inset-0 h-full w-full border-0 grayscale-[0.15]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
