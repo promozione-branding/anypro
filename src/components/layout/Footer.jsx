@@ -576,14 +576,16 @@ export default function Footer() {
                         <span className="text-xs text-neutral-400">
                             Website Designed By{" "}
 
-                            <a
-                                href="https://inquirybazaar.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-semibold text-white transition hover:text-red-500"
+                            <p
+                               
+                                className="font-semibold text-white transition "
                             >
-                                Inquiry Bazaar Pvt. Ltd.
-                            </a>
+                                Inquiry Bazaar Pvt. Ltd. 
+                                <a href="https://inquirybazaar.com/"
+                                target="_blank"
+                                 className="font-semibold text-white transition hover:text-red-500"
+                                rel="noopener noreferrer"> B2B Marketplace</a>
+                            </p>
                         </span>
                     </div>
 

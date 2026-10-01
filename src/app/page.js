@@ -28,9 +28,9 @@ export default function Home() {
       <AnyproCategoryMarquee />
       <ToyParkCategories />
       <WhyChooseUs />
-      <AnyproProcess />
       <CarromScrollSection />
       <ProductSection />
+      <AnyproProcess />
       <EveryGameSection />
       <Testimonials />
       <FAQItem />

@@ -14,9 +14,10 @@ export default function EveryGameSection() {
 
     useLayoutEffect(() => {
         let animation;
+        let lottieTween;
 
         const ctx = gsap.context(() => {
-            if (!lottieRef.current) return;
+            if (!lottieRef.current || !sectionRef.current) return;
 
             animation = lottie.loadAnimation({
                 container: lottieRef.current,
@@ -30,38 +31,68 @@ export default function EveryGameSection() {
             });
 
             animation.addEventListener("DOMLoaded", () => {
-                const playhead = { frame: 0 };
+                /*
+                 * Your JSON has:
+                 *
+                 * 0   → 60   = Bounce 1
+                 * 60  → 120  = Bounce 2
+                 * 120 → 180  = Bounce 3
+                 * 180 → 240  = Bounce 4
+                 * 240 → 300  = Bounce 5
+                 *
+                 * Therefore:
+                 * 180 = exactly 3 complete bounces
+                 */
 
-                gsap.to(playhead, {
-                    frame: animation.totalFrames - 1,
+                const THREE_BOUNCES_FRAME = 180;
+
+                const playhead = {
+                    frame: 0,
+                };
+
+                lottieTween = gsap.to(playhead, {
+                    frame: THREE_BOUNCES_FRAME,
                     ease: "none",
 
                     scrollTrigger: {
                         trigger: sectionRef.current,
+
                         start: "top top",
                         end: "+=1600",
+
                         pin: true,
                         scrub: 1,
+
                         invalidateOnRefresh: true,
 
                         onUpdate: () => {
+                            if (!animation) return;
+
                             animation.goToAndStop(
-                                Math.floor(playhead.frame),
+                                Math.round(playhead.frame),
                                 true
                             );
                         },
                     },
                 });
 
+                // Make sure the initial frame is correct
+                animation.goToAndStop(0, true);
+
                 ScrollTrigger.refresh();
             });
         }, sectionRef);
 
         return () => {
+            if (lottieTween) {
+                lottieTween.kill();
+            }
+
             ctx.revert();
 
             if (animation) {
                 animation.destroy();
+                animation = null;
             }
         };
     }, []);
@@ -71,7 +102,9 @@ export default function EveryGameSection() {
             ref={sectionRef}
             className="relative h-[100vh] min-h-[570px] w-full overflow-hidden bg-[#f5f5f3]"
         >
-            {/* Content */}
+            {/* =========================
+                CONTENT
+            ========================= */}
             <div className="absolute inset-0 z-10">
                 <div className="mx-auto flex h-full w-[calc(100%-2rem)] max-w-7xl items-center sm:w-[calc(100%-3rem)]">
                     <div className="max-w-xl">
@@ -85,6 +118,7 @@ export default function EveryGameSection() {
                         <h2 className="text-5xl font-extrabold leading-[0.9] tracking-[-0.055em] text-neutral-900 sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
                             One passion.
                             <br />
+
                             <span className="text-neutral-500">
                                 Every game.
                             </span>
@@ -97,7 +131,9 @@ export default function EveryGameSection() {
                             sport.
                         </p>
 
-                        {/* Stats */}
+                        {/* =========================
+                            STATS
+                        ========================= */}
                         <div className="mt-7 grid max-w-md grid-cols-2 border-t border-neutral-300">
 
                             {/* Experience */}
@@ -167,12 +203,15 @@ export default function EveryGameSection() {
                                     Athletes Reached
                                 </p>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Football */}
+            {/* =========================
+                FOOTBALL LOTTIE
+            ========================= */}
             <div
                 ref={lottieRef}
                 className="
@@ -191,7 +230,9 @@ export default function EveryGameSection() {
                 "
             />
 
-            {/* Scroll hint */}
+            {/* =========================
+                SCROLL HINT
+            ========================= */}
             <div className="absolute bottom-[4%] left-1/2 z-20 -translate-x-1/2 text-center">
                 <div className="mx-auto mb-2 h-6 w-px bg-neutral-300" />
 
