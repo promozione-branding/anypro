@@ -1,6 +1,7 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import { FaWhatsapp } from "react-icons/fa";
 import {
     ArrowRight,
     MessageCircle,
@@ -9,12 +10,14 @@ import {
 } from "lucide-react";
 
 import { Star, Sun } from "../svg/svg";
+import Popup from "../layout/Popup";
 
 /* ============================================================
    CTA SECTION
 ============================================================ */
 
 export default function AnyproCTA() {
+     const [open, setOpen] = useState(false);
     return (
         <section className="relative overflow-hidden bg-neutral-950 px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
             {/* ==================================================
@@ -234,8 +237,8 @@ export default function AnyproCTA() {
 
                             {/* Main CTA */}
 
-                            <motion.a
-                                href="/inquiry"
+                            <motion.div
+                                 onClick={() => setOpen(true)}
                                 whileHover={{
                                     scale: 1.02,
                                     y: -2,
@@ -292,7 +295,7 @@ export default function AnyproCTA() {
                                 >
                                     <ArrowRight size={17} />
                                 </span>
-                            </motion.a>
+                            </motion.div>
 
                             {/* Secondary actions */}
 
@@ -327,7 +330,8 @@ export default function AnyproCTA() {
                                     "
                                 >
                                     <div className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/15">
-                                        <MessageCircle
+                                        <FaWhatsapp 
+
                                             size={20}
                                             className="text-[#25D366]"
                                         />
@@ -347,7 +351,7 @@ export default function AnyproCTA() {
                                 {/* Contact */}
 
                                 <motion.a
-                                    href="/contact-us"
+                                     href="tel:+919811117654"
                                     whileHover={{
                                         y: -3,
                                     }}
@@ -402,6 +406,11 @@ export default function AnyproCTA() {
                     </motion.div>
                 </div>
             </div>
+
+             <Popup
+                isOpen={open}
+                onClose={() => setOpen(false)}
+            />
         </section>
     );
 }

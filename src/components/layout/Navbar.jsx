@@ -21,6 +21,7 @@ import {
     FiMail,
     FiChevronRight,
 } from "react-icons/fi";
+import Link from "next/link";
 
 const navItems = [
     {
@@ -40,8 +41,8 @@ const navItems = [
         href: "/contact-us",
     },
     {
-        name: "Blog",
-        href: "/blog",
+        name: "Blogs",
+        href: "/blogs",
     },
 ];
 
@@ -63,7 +64,7 @@ const socialItems = [
     },
     {
         name: "YouTube",
-        href: "#",
+        href: "https://www.youtube.com/@anypro5461",
         icon: <FaYoutube />,
     },
     {
@@ -229,9 +230,9 @@ export default function Navbar() {
                         >
                             <FiMapPin size={13} />
 
-                            <span>
-                                123 Toy Street, New Delhi
-                            </span>
+                            <Link  href="https://share.google/ZKTuBiSjPJKVsqoIi">
+                                Karol Bagh New Delhi - 110005, India
+                            </Link>
                         </motion.div>
 
                         <motion.div
@@ -245,9 +246,9 @@ export default function Navbar() {
                         >
                             <FiPhone size={13} />
 
-                            <span>
-                                +91 98765 43210
-                            </span>
+                            <Link href="tel:+919811117654">
+                                +91 98111 17654
+                            </Link>
                         </motion.div>
 
                         <motion.div
@@ -261,9 +262,9 @@ export default function Navbar() {
                         >
                             <FiMail size={13} />
 
-                            <span>
-                                hello@toypark.com
-                            </span>
+                            <Link href="mailto:info@toyparkindia.com">
+                            info@toyparkindia.com
+                            </Link>
                         </motion.div>
 
                         <span className="sm:hidden">

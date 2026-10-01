@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef } from "react";
+"use client"
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 
@@ -10,6 +11,7 @@ import {
     ArrowRight,
     Star,
 } from "lucide-react";
+import Popup from "../layout/Popup";
 
 const features = [
     {
@@ -176,6 +178,7 @@ function FeatureCard({ item, index }) {
 }
 
 export default function WhyChooseUs() {
+     const [open, setOpen] = useState(false);
     const sectionRef = useRef(null);
     const headingRef = useRef(null);
     const textRef = useRef(null);
@@ -410,6 +413,7 @@ export default function WhyChooseUs() {
                     {/* CTA */}
 
                     <motion.button
+                     onClick={() => setOpen(true)}
                         whileHover={{
                             scale: 1.03,
                         }}
@@ -432,7 +436,7 @@ export default function WhyChooseUs() {
               shadow-xl
             "
                     >
-                        Discover Toy Park
+                        Get Quote Now
 
                         <span
                             className="
@@ -663,6 +667,10 @@ export default function WhyChooseUs() {
                     </motion.div>
                 </div>
             </div>
+             <Popup
+                isOpen={open}
+                onClose={() => setOpen(false)}
+            />
         </section>
     );
 }

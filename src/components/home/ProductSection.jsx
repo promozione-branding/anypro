@@ -446,14 +446,15 @@ export default function ProductSection() {
                             </h3>
                         </div>
 
-                        <motion.button
+                        <Link
+                        href="/products"
                             whileHover={{ x: 5 }}
                             whileTap={{ scale: 0.97 }}
                             className="flex w-fit items-center gap-3 rounded-full bg-white px-7 py-4 font-bold text-black"
                         >
                             Shop All Products
                             <ArrowRight size={18} />
-                        </motion.button>
+                        </Link>
                     </div>
 
                     <Star

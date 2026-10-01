@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { categories } from "@/data/data";
 import { Cloud, Sun, Star, Balloon } from "../svg/svg";
+import Link from "next/link";
+
 
 function CategoryCard({ item }) {
   const Icon = item.icon;
@@ -134,7 +136,8 @@ function CategoryCard({ item }) {
           </div>
 
           {/* CTA */}
-          <motion.button
+          <Link
+          href="/products"
             className="
               mt-6
               flex
@@ -158,7 +161,7 @@ function CategoryCard({ item }) {
           >
             Explore
             <ArrowRight size={17} />
-          </motion.button>
+          </Link>
         </div>
       </div>
     </motion.article>

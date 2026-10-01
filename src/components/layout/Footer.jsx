@@ -1,4 +1,7 @@
+
 "use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     MapPin,
@@ -13,6 +16,10 @@ import {
     FaYoutube,
     FaLinkedinIn,
 } from "react-icons/fa";
+
+// =========================================================
+// CLOUD
+// =========================================================
 
 export const Cloud = ({ className = "", size = 180 }) => (
     <svg
@@ -43,6 +50,10 @@ export const Cloud = ({ className = "", size = 180 }) => (
         />
     </svg>
 );
+
+// =========================================================
+// STAR
+// =========================================================
 
 export const Star = ({
     className = "",
@@ -76,6 +87,10 @@ export const Star = ({
     </svg>
 );
 
+// =========================================================
+// SUN
+// =========================================================
+
 export const Sun = ({ className = "" }) => (
     <svg
         width="110"
@@ -104,6 +119,10 @@ export const Sun = ({ className = "" }) => (
         />
     </svg>
 );
+
+// =========================================================
+// BALLOON
+// =========================================================
 
 export const Balloon = ({
     className = "",
@@ -150,25 +169,60 @@ export const Balloon = ({
     </svg>
 );
 
+// =========================================================
+// FOOTER
+// =========================================================
+
 export default function Footer() {
     const usefulLinks = [
-        "Home",
-        "About Us",
-        "Contact",
-        "Blogs",
+        {
+            label: "Home",
+            href: "/",
+        },
+        {
+            label: "About Us",
+            href: "/about-us",
+        },
+        {
+            label: "Contact Us",
+            href: "/contact-us",
+        },
+        {
+            label: "Products",
+            href: "/products",
+        },
+        {
+            label: "Blogs",
+            href: "/blogs",
+        },
     ];
 
     const products = [
-        "Football",
-        "Training Gear",
-        "Sports Equipment",
-        "Performance Wear",
+        {
+            label: "Foosball Table",
+            href: "/products/foosball-table",
+        },
+        {
+            label: "Carrom Board",
+            href: "/products/carrom-board",
+        },
+        {
+            label: "Sports Goods",
+            href: "/products/sports-goods",
+        },
+        {
+            label: "Activity & Recreational Games",
+            href: "products/activity-recreational-games",
+        },
     ];
 
     return (
         <footer className="relative overflow-hidden bg-neutral-950 text-white">
 
-            {/* Background Decorations */}
+            {/* =====================================================
+                BACKGROUND DECORATIONS
+            ===================================================== */}
+
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
                 {/* Soft background glow */}
@@ -289,7 +343,10 @@ export default function Footer() {
                 />
             </div>
 
-            {/* Main Footer */}
+            {/* =====================================================
+                MAIN FOOTER
+            ===================================================== */}
+
             <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-8 sm:py-12 md:px-10 md:py-13">
 
                 {/* Footer Heading */}
@@ -327,19 +384,22 @@ export default function Footer() {
                 {/* Footer Cards */}
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-                    {/* Brand */}
+                    {/* =================================================
+                        BRAND
+                    ================================================= */}
+
                     <FooterCard delay={0}>
 
-                        <a
+                        <Link
                             href="/"
                             className="inline-flex items-center gap-3"
                         >
                             <img
                                 src="/logo/logo.jpg"
-                                alt="GAME"
+                                alt="AnyPro"
                                 className="h-20 w-auto rounded-lg object-contain"
                             />
-                        </a>
+                        </Link>
 
                         <p className="mt-5 max-w-xs text-sm leading-6 text-neutral-400">
                             Performance-driven products made for people who
@@ -364,8 +424,9 @@ export default function Footer() {
                             </SocialIcon>
 
                             <SocialIcon
-                                href="#"
+                                href="https://www.youtube.com/@anypro5461"
                                 label="YouTube"
+                                external
                             >
                                 <FaYoutube size={15} />
                             </SocialIcon>
@@ -380,7 +441,10 @@ export default function Footer() {
                         </div>
                     </FooterCard>
 
-                    {/* Explore */}
+                    {/* =================================================
+                        EXPLORE
+                    ================================================= */}
+
                     <FooterCard delay={0.08}>
 
                         <FooterTitle>
@@ -390,15 +454,19 @@ export default function Footer() {
                         <div className="mt-7 space-y-5">
                             {usefulLinks.map((item) => (
                                 <FooterLink
-                                    key={item}
-                                    label={item}
+                                    key={item.href}
+                                    label={item.label}
+                                    href={item.href}
                                 />
                             ))}
                         </div>
 
                     </FooterCard>
 
-                    {/* Products */}
+                    {/* =================================================
+                        PRODUCTS
+                    ================================================= */}
+
                     <FooterCard delay={0.16}>
 
                         <FooterTitle>
@@ -406,17 +474,21 @@ export default function Footer() {
                         </FooterTitle>
 
                         <div className="mt-7 space-y-5">
-                            {products.map((item) => (
+                            {products.map((item, index) => (
                                 <FooterLink
-                                    key={item}
-                                    label={item}
+                                    key={`${item.href}-${index}`}
+                                    label={item.label}
+                                    href={item.href}
                                 />
                             ))}
                         </div>
 
                     </FooterCard>
 
-                    {/* Contact */}
+                    {/* =================================================
+                        CONTACT
+                    ================================================= */}
+
                     <FooterCard delay={0.24}>
 
                         <FooterTitle>
@@ -425,27 +497,34 @@ export default function Footer() {
 
                         <div className="mt-7 space-y-6">
 
+                            {/* Location */}
                             <ContactItem
+                                href="https://share.google/ZKTuBiSjPJKVsqoIi"
                                 icon={<MapPin size={15} />}
                                 label="Visit us"
+                                external
                             >
-                                New Delhi, India
+                                Karol Bagh New Delhi - 110005, India
                             </ContactItem>
 
+                            {/* Email */}
                             <ContactItem
-                                href="mailto:hello@example.com"
+                                href="mailto:info@toyparkindia.com"
                                 icon={<Mail size={15} />}
                                 label="Email"
+                                external
                             >
-                                hello@example.com
+                                info@toyparkindia.com
                             </ContactItem>
 
+                            {/* Phone */}
                             <ContactItem
-                                href="tel:+919999999999"
+                                href="tel:+919811117654"
                                 icon={<Phone size={15} />}
                                 label="Call us"
+                                external
                             >
-                                +91 99999 99999
+                                +91 98111 17654
                             </ContactItem>
 
                         </div>
@@ -454,65 +533,89 @@ export default function Footer() {
 
                 </div>
 
-                {/* Bottom */}
+                {/* =====================================================
+                    BOTTOM
+                ===================================================== */}
+
                 <motion.div
-  initial={{
-    opacity: 0,
-  }}
-  whileInView={{
-    opacity: 1,
-  }}
-  viewport={{
-    once: true,
-  }}
-  transition={{
-    duration: 0.6,
-    delay: 0.3,
-  }}
-  className="relative mt-5 flex flex-col gap-5 border-t border-neutral-800 pt-6 sm:flex-row sm:items-center sm:justify-between"
->
-  {/* Copyright */}
-  <p className="text-xs text-center text-neutral-400">
-    © 2026 GAME. All rights reserved.
-  </p>
+                    initial={{
+                        opacity: 0,
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                    }}
+                    viewport={{
+                        once: true,
+                    }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.3,
+                    }}
+                    className="
+                        relative
+                        mt-5
+                        flex
+                        flex-col
+                        gap-5
+                        border-t
+                        border-neutral-800
+                        pt-6
+                        sm:flex-row
+                        sm:items-center
+                        sm:justify-between
+                    "
+                >
 
-  {/* Center */}
-  <div className="text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2">
-    <span className="text-xs text-neutral-400">
-      Website Designed By{" "}
-      <a
-        href="https://inquirybazaar.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-semibold text-white transition hover:text-red-500"
-      >
-        Inquiry Bazaar Pvt. Ltd.
-      </a>
-    </span>
-  </div>
+                    {/* Copyright */}
+                    <p className="text-center text-xs text-neutral-400">
+                        © 2026 Anypro. All rights reserved.
+                    </p>
 
-  {/* Right */}
-  <div className="flex justify-center items-center gap-6">
-    <a
-      href="#"
-      className="text-xs text-neutral-400 transition hover:text-white"
-    >
-      Privacy
-    </a>
+                    {/* Center */}
+                    <div className="text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2">
+                        <span className="text-xs text-neutral-400">
+                            Website Designed By{" "}
 
-    <a
-      href="#"
-      className="text-xs text-neutral-400 transition hover:text-white"
-    >
-      Terms
-    </a>
-  </div>
-</motion.div>
+                            <a
+                                href="https://inquirybazaar.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-white transition hover:text-red-500"
+                            >
+                                Inquiry Bazaar Pvt. Ltd.
+                            </a>
+                        </span>
+                    </div>
+
+                    {/* Right */}
+                    <div className="flex items-center justify-center gap-6">
+
+                        <a
+                            href="#"
+                            className="text-xs text-neutral-400 transition hover:text-white"
+                        >
+                            Privacy
+                        </a>
+
+                        <a
+                            href="#"
+                            className="text-xs text-neutral-400 transition hover:text-white"
+                        >
+                            Terms
+                        </a>
+
+                    </div>
+
+                </motion.div>
 
             </div>
         </footer>
     );
 }
+
+// =========================================================
+// FOOTER CARD
+// =========================================================
 
 function FooterCard({ children, delay = 0 }) {
     return (
@@ -537,12 +640,24 @@ function FooterCard({ children, delay = 0 }) {
             whileHover={{
                 y: -4,
             }}
-            className="rounded-2xl border border-white/[0.03] bg-neutral-900 p-6 sm:p-7 lg:min-h-[320px]"
+            className="
+                rounded-2xl
+                border
+                border-white/[0.03]
+                bg-neutral-900
+                p-6
+                sm:p-7
+                lg:min-h-[320px]
+            "
         >
             {children}
         </motion.div>
     );
 }
+
+// =========================================================
+// FOOTER TITLE
+// =========================================================
 
 function FooterTitle({ children }) {
     return (
@@ -552,27 +667,93 @@ function FooterTitle({ children }) {
     );
 }
 
-function FooterLink({ label }) {
+// =========================================================
+// FOOTER LINK
+// =========================================================
+
+function FooterLink({ label, href }) {
     return (
-        <a
-            href="#"
-            className="group flex items-center justify-between border-b border-neutral-800 pb-4 text-sm font-medium text-neutral-300 transition hover:text-white"
+        <Link
+            href={href}
+            className="
+                group
+                flex
+                items-center
+                justify-between
+                border-b
+                border-neutral-800
+                pb-4
+                text-sm
+                font-medium
+                text-neutral-300
+                transition
+                hover:text-white
+            "
         >
             <span>{label}</span>
 
             <ArrowUpRight
                 size={15}
-                className="text-neutral-600 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white"
+                className="
+                    text-neutral-600
+                    transition
+                    duration-300
+                    group-hover:-translate-y-1
+                    group-hover:translate-x-1
+                    group-hover:text-white
+                "
             />
-        </a>
+        </Link>
     );
 }
+
+// =========================================================
+// SOCIAL ICON
+// =========================================================
 
 function SocialIcon({
     href,
     label,
     children,
+    external = false,
 }) {
+    const classes = `
+        flex
+        h-10
+        w-10
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-neutral-700
+        text-neutral-400
+        transition
+        hover:border-white
+        hover:bg-white
+        hover:text-black
+    `;
+
+    if (external) {
+        return (
+            <motion.Link
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{
+                    y: -3,
+                    scale: 1.05,
+                }}
+                whileTap={{
+                    scale: 0.95,
+                }}
+                className={classes}
+            >
+                {children}
+            </motion.Link>
+        );
+    }
+
     return (
         <motion.a
             href={href}
@@ -584,22 +765,42 @@ function SocialIcon({
             whileTap={{
                 scale: 0.95,
             }}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-700 text-neutral-400 transition hover:border-white hover:bg-white hover:text-black"
+            className={classes}
         >
             {children}
         </motion.a>
     );
 }
 
+// =========================================================
+// CONTACT ITEM
+// =========================================================
+
 function ContactItem({
     href,
     icon,
     label,
     children,
+    external = false,
 }) {
     const content = (
         <>
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-neutral-800 text-neutral-400 transition group-hover:bg-white group-hover:text-black">
+            <div
+                className="
+                    flex
+                    h-9
+                    w-9
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-neutral-800
+                    text-neutral-400
+                    transition
+                    group-hover:bg-white
+                    group-hover:text-black
+                "
+            >
                 {icon}
             </div>
 
@@ -615,14 +816,27 @@ function ContactItem({
         </>
     );
 
+    if (external) {
+        return (
+            <Link
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex gap-4"
+            >
+                {content}
+            </Link>
+        );
+    }
+
     if (href) {
         return (
-            <a
+            <Link
                 href={href}
                 className="group flex gap-4"
             >
                 {content}
-            </a>
+            </Link>
         );
     }
 
@@ -632,3 +846,4 @@ function ContactItem({
         </div>
     );
 }
+
