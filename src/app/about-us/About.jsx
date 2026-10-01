@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { Cloud, Sun, Star } from "@/components/svg/svg";
+import Popup from "@/components/layout/Popup";
 
 const stats = [
   {
@@ -62,6 +63,7 @@ const values = [
 
 function CountUp({ value, suffix = "" }) {
   const [count, setCount] = useState(0);
+  
 
   useEffect(() => {
     let start = 0;
@@ -102,6 +104,8 @@ function CountUp({ value, suffix = "" }) {
 }
 
 export default function About() {
+         const [open, setOpen] = useState(false);
+
   return (<>
     <div className="relative z-10 pt-10  md:pt-25">
       <div className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[470px] lg:min-h-[500px]">
@@ -341,7 +345,7 @@ export default function About() {
                 </a>
 
                 <a
-                  href="/contact-us"
+                 href="tel:+919811117654"
                   className="flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
                 >
                   Contact Us
@@ -718,8 +722,8 @@ export default function About() {
               </p>
             </div>
 
-            <a
-              href="/contact"
+            <button
+              onClick={() => setOpen(true)}
               className="group flex shrink-0 items-center gap-2 rounded-xl bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-white hover:text-black"
             >
               Get In Touch
@@ -728,12 +732,16 @@ export default function About() {
                 size={17}
                 className="transition-transform group-hover:translate-x-1"
               />
-            </a>
+            </button>
 
           </div>
         </motion.div>
 
       </section>
+      <Popup
+                      isOpen={open}
+                      onClose={() => setOpen(false)}
+                  />
     </main>
   </>);
 }
