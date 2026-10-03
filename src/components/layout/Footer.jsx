@@ -593,17 +593,17 @@ export default function Footer() {
                     <div className="flex items-center justify-center gap-6">
 
                         <a
-                            href="#"
+                            href="/privacy-policy"
                             className="text-xs text-neutral-400 transition hover:text-white"
                         >
                             Privacy
                         </a>
 
                         <a
-                            href="#"
+                            href="return-refund"
                             className="text-xs text-neutral-400 transition hover:text-white"
                         >
-                            Terms
+                            Refund Policy
                         </a>
 
                     </div>
