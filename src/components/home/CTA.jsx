@@ -27,7 +27,7 @@ export default function AnyproCTA() {
             <div className="absolute inset-0">
                 <img
                     src="https://media.istockphoto.com/id/491219472/photo/family-game-evening-with-self-made-board-game.jpg?s=612x612&w=0&k=20&c=Sw6TDWS-uY_r4REfRtT_Ap1-tMPyp4_1xaa4i3RB7hI="
-                    alt=""
+                    alt="Best Board Game Set Manufacturers"
                     className="h-full w-full object-cover"
                 />
 

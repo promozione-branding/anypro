@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="relative hidden h-[630px] w-full md:block ">
         <Image
           src="/desktop.webp"
-          alt="Table Games"
+          alt="Fun Board Game Wholesalers"
           fill
           priority
           sizes="100vw"
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative block aspect-[16/16] w-full md:hidden">
         <Image
           src="/mobb.webp"
-          alt="Table Games"
+          alt="Fun Board Game Wholesalers"
           fill
           priority
           sizes="100vw"

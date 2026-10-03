@@ -345,7 +345,7 @@ export default function Navbar() {
                     >
                         <motion.img
                             src="/logo/logo.jpg"
-                            alt="Toy Park"
+                            alt="Anypro"
                             animate={{
                                 scale: scrolled ? 0.9 : 1,
                             }}

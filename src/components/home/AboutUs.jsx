@@ -219,10 +219,10 @@ export default function AboutUs() {
                         ================================================== */}
 
                         <motion.img
+                        alt="Table Games Wholesaler"
                             src="https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-trampoline-clipart-funny-cartoon-trampoline-with-colored-net-vector-illustration-isolated-png-image_6817750.png"
                             // src="https://png.pngtree.com/png-clipart/20230913/original/pngtree-trampoline-clipart-trampoline-for-children-flat-illustration-cartoon-vector-png-image_11075554.png"
                             // src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-trampolin-clipart-trampoline-set-and-gate-isolated-on-white-background-vector-png-image_12150871.png"
-                            alt="Toy Park"
                             initial={{
                                 opacity: 0,
                                 y: 50,

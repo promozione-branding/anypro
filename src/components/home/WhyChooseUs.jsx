@@ -523,7 +523,7 @@ export default function WhyChooseUs() {
 
                     <motion.img
                         src="https://static.vecteezy.com/system/resources/thumbnails/045/686/300/small/black-rook-chess-piece-3d-icon-free-png.png"
-                        alt="Colorful toy"
+                        alt="Board Games"
                         className="
               relative
               z-10

@@ -136,7 +136,7 @@ export default function ContactCTA() {
 
                                 <img
                                     src="https://cdn-icons-png.flaticon.com/512/2656/2656502.png"
-                                    alt="Project illustration"
+                                    alt="Table Games"
                                     className="relative mx-auto h-full w-auto object-contain drop-shadow-[0_20px_25px_rgba(0,0,0,0.4)]"
                                 />
                             </motion.div>

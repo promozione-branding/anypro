@@ -94,7 +94,7 @@ export default function Testimonials() {
                         <div className="relative h-[360px] w-full overflow-hidden rounded-[1.5rem] bg-black sm:h-[400px]">
                             <img
                                 src="https://images.unsplash.com/photo-1607376162689-10d6eb9d6c83?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vc2ViYWxsJTIwdGFibGV8ZW58MHx8MHx8fDA%3D"
-                                alt="Creative team working together"
+                                alt="Table Games Wholesaler"
                                 className="h-full w-full object-cover"
                             />
 

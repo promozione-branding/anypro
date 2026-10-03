@@ -223,7 +223,7 @@ export default function About() {
               <div className="absolute bottom-0 right-[2%] h-[470px] w-[560px]">
                 <img
                   src="/animations/Bouncy ball.svg"
-                  alt="Happy child enjoying recreation"
+                  alt="Table Games Wholesaler"
                   className="h-full w-full object-contain"
                 />
               </div>
@@ -271,7 +271,7 @@ export default function About() {
           <div className="absolute bottom-[-15px] left-1/2 h-[300px] w-[350px] -translate-x-1/2">
             <img
               src="/animations/Bouncy ball.svg"
-              alt="Happy child enjoying recreation"
+              alt="Best Board Game Set Manufacturers"
               className="h-full w-full object-contain"
             />
           </div>
@@ -381,7 +381,7 @@ export default function About() {
 
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2656/2656502.png"
-                  alt="Our team working together"
+                  alt="Table Games"
                   className="h-full w-full object-cover"
                 />
 
@@ -508,7 +508,7 @@ export default function About() {
             <div className="relative h-[360px] overflow-hidden rounded-[2rem] bg-[#f5f5f5] sm:h-[430px]">
               <img
                 src="https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=1200&q=85"
-                alt="People enjoying recreational games"
+                alt="Table Games Wholesaler"
                 className="h-full w-full object-cover"
               />
             </div>
