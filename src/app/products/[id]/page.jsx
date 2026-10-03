@@ -28,10 +28,9 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: product.metaTitle || `${product.name} | RG Plastic`,
+    title: product.metaTitle || `${product.name} | AnyPro`,
     description:
-      product.metaDescription ||
-      `Learn more about ${product.name} from RG Plastic.`,
+      product.metaDescription || `Learn more about ${product.name} AnyPro.`,
   };
 }
 
