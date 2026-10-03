@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${poppins.variable} antialiased`}>
       <body className="font-[var(--font-poppins)]">
         <SmoothScroll />
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

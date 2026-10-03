@@ -16,3 +16,269 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }
+
+
+.jodit-wysiwyg ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ul ul {
+  list-style: circle;
+}
+
+.jodit-wysiwyg ul ul ul {
+  list-style: square;
+}
+
+/* Global styling for Jodit content */
+.jodit-content {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.jodit-content ul {
+  list-style-type: disc;
+  /* or circle, square */
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.jodit-content ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.jodit-content li {
+  margin: 5px 0;
+}
+
+
+
+/* =====================================================
+   JODIT / BLOG CONTENT
+===================================================== */
+
+.blog-content {
+  width: 100%;
+  max-width: 780px;
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+}
+
+/* Paragraphs */
+.blog-content p {
+  display: block;
+  margin: 0 0 20px;
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* H1 */
+.jodit-content h1 {
+  display: block;
+  margin: 40px 0 20px;
+  color: #111827;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* H2 */
+.jodit-content h2 {
+  display: block;
+  margin: 36px 0 16px;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* H3 */
+.jodit-content h3 {
+  display: block;
+  margin: 32px 0 14px;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* H4 */
+.jodit-content h4 {
+  display: block;
+  margin: 28px 0 12px;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* H5 */
+.jodit-content h5 {
+  display: block;
+  margin: 24px 0 10px;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* H6 */
+.jodit-content h6 {
+  display: block;
+  margin: 24px 0 10px;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Bold */
+.jodit-content strong,
+.jodit-content b {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Italic */
+.jodit-content em,
+.jodit-content i {
+  font-style: italic;
+}
+
+/* Links */
+.jodit-content a {
+  color: #85a30f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.jodit-content a:hover {
+  color: #657c08;
+}
+
+/* Unordered List */
+.jodit-content ul {
+  display: block;
+  margin: 20px 0;
+  padding-left: 30px;
+  list-style-type: disc;
+}
+
+.jodit-content ul li {
+  display: list-item;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* Ordered List */
+.jodit-content ol {
+  display: block;
+  margin: 20px 0;
+  padding-left: 30px;
+  list-style-type: decimal;
+}
+
+.jodit-content ol li {
+  display: list-item;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* Nested Lists */
+.jodit-content ul ul,
+.jodit-content ol ul,
+.jodit-content ul ol,
+.jodit-content ol ol {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Blockquote */
+.jodit-content blockquote {
+  display: block;
+  margin: 30px 0;
+  padding: 16px 20px;
+  border-left: 4px solid #85a30f;
+  background: #f1f2ed;
+  color: #4b5563;
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* Images */
+.blog-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 28px auto;
+  object-fit: contain;
+}
+
+/* Tables */
+.jodit-content table {
+  width: 100%;
+  margin: 30px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.jodit-content th,
+.jodit-content td {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  text-align: left;
+}
+
+.jodit-content th {
+  background: #f3f4f6;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Horizontal line */
+.jodit-content hr {
+  margin: 35px 0;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Code */
+.jodit-content code {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  color: #111827;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.jodit-content pre {
+  margin: 25px 0;
+  padding: 18px;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.jodit-content pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+/* Jodit-generated div */
+.jodit-content div {
+  max-width: 100%;
+}
