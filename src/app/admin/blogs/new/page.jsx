@@ -14,8 +14,8 @@ import {
     Upload,
     CalendarDays,
 } from "lucide-react";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
-import AdminSidebar from "@/components/Admin/AdminSidebar";
 
 const JoditEditor = dynamic(
     () => import("jodit-react"),
