@@ -178,14 +178,14 @@ export default function About() {
 
               {/* Heading */}
 
-              <h1 className="max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h2 className="max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 We make
                 <br />
 
                 <span className="text-[#FF1744]">
                   play unforgettable.
                 </span>
-              </h1>
+              </h2>
 
               {/* Description */}
 
