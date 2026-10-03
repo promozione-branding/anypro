@@ -17,7 +17,6 @@ body {
   font-family: var(--font-poppins), sans-serif;
 }
 
-
 .jodit-wysiwyg ul {
   list-style: disc;
   padding-left: 20px;
@@ -60,8 +59,6 @@ body {
 .jodit-content li {
   margin: 5px 0;
 }
-
-
 
 /* =====================================================
    JODIT / BLOG CONTENT
@@ -281,4 +278,40 @@ body {
 /* Jodit-generated div */
 .jodit-content div {
   max-width: 100%;
+}
+
+/* Jodit editor */
+/* Jodit editor */
+.jodit-fixed-editor .jodit-container {
+  height: 400px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Toolbar stays at the top */
+.jodit-fixed-editor .jodit-toolbar__box {
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Only ONE scrollbar - editor workplace */
+.jodit-fixed-editor .jodit-workplace {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Remove scrolling from Jodit content */
+.jodit-fixed-editor .jodit-wysiwyg {
+  min-height: 350px !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Also prevent iframe from creating another scrollbar */
+.jodit-fixed-editor iframe {
+  overflow: hidden !important;
 }
