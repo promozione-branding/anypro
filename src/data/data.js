@@ -7,7 +7,6 @@ export const categories = [
     icon: Dice5,
     image:
       "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=1000&q=85",
-    
   },
   {
     title: "Board Game",
@@ -172,6 +171,10 @@ export const products = [
     category: "Table Games",
     subcategory: "Air Hockey Table",
 
+    metaTitle: "Air Hockey Table Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Buy Air Hockey Tables from AnyPro, a trusted Table Games manufacturer and wholesaler offering quality gaming tables for schools, clubs, activity centres and play spaces.",
+
     rating: 4.8,
     reviews: 124,
 
@@ -237,8 +240,11 @@ export const products = [
     slug: "foosball-table",
     category: "Table Games",
     subcategory: "Foosball",
-        subcategory: "Foosball Table",
+    subcategory: "Foosball Table",
 
+    metaTitle: "Foosball Table Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore Foosball Tables from AnyPro, a Table Games manufacturer and wholesaler offering durable and engaging table football games for recreational spaces.",
 
     rating: 4.2,
     reviews: 154,
@@ -307,10 +313,13 @@ export const products = [
     slug: "other-table-arcade-games",
     category: "Table Games",
     subcategory: "Other Table & Arcade Games",
-      color: "#FCE8F3",
-       badge: "LIMITED",
+    color: "#FCE8F3",
+    badge: "LIMITED",
     rating: 4.3,
     reviews: 114,
+    metaTitle: "Table & Arcade Games Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore Table & Arcade Games from AnyPro, a trusted manufacturer and wholesaler offering engaging recreational games for schools, clubs, activity centres and play spaces.",
 
     shortDescription:
       "Turn ordinary entertainment spaces into exciting gaming zones with Other Table & Arcade Games from AnyPro. From competitive table games to engaging arcade-style activities, this range is designed to encourage interaction, quick thinking, coordination, and plenty of fun for players of different age groups.",
@@ -374,13 +383,16 @@ export const products = [
     name: "Carrom Board",
     slug: "carrom-board",
     category: "Board Game",
-      subcategory: "Carrom Board",
-       color: "#FCE8F3",
-       badge: "LIMITED",
+    subcategory: "Carrom Board",
+    color: "#FCE8F3",
+    badge: "LIMITED",
 
     rating: 4.7,
     reviews: 186,
 
+    metaTitle: "Carrom Board Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore Carrom Boards from AnyPro, a trusted Table Games and Board Games manufacturer and wholesaler offering quality carrom sets for recreational and institutional spaces.",
     shortDescription:
       "Bring a classic indoor favourite to modern recreational spaces with the Carrom Board from AnyPro. Carrom is an engaging tabletop game that combines concentration, hand-eye coordination, precision, and strategy, making it a fun choice for both casual play and competitive matches.",
 
@@ -446,12 +458,15 @@ export const products = [
     slug: "chess",
     category: "Board Game",
     subcategory: "Chess",
+    metaTitle: "Chess Board Games Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore Chess from AnyPro, a trusted Board Games manufacturer and wholesaler offering engaging strategy games for schools, clubs, activity centres and recreational spaces.",
 
     rating: 4.9,
     reviews: 142,
 
-     color: "#FCE8F3",
-       badge: "LIMITED",
+    color: "#FCE8F3",
+    badge: "LIMITED",
     shortDescription:
       "Bring strategy, focus, and thoughtful competition to recreational spaces with Chess from AnyPro. One of the most recognised Board Games, chess encourages players to think ahead, plan moves, solve problems, and make strategic decisions while enjoying an engaging, screen-free activity.",
 
@@ -513,8 +528,12 @@ export const products = [
     slug: "mahjong-game",
     category: "Board Game",
     subcategory: "Mahjong",
-     color: "#FCE8F3",
-       badge: "LIMITED",
+    color: "#FCE8F3",
+    badge: "LIMITED",
+
+    metaTitle: "Mahjong Game Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore Mahjong Games from AnyPro, a trusted Board Games manufacturer and wholesaler offering engaging tile-based games for recreational, institutional and gaming spaces.",
 
     rating: 4.8,
     reviews: 97,
@@ -578,8 +597,11 @@ export const products = [
     slug: "sports-goods",
     category: "Sports Goods",
     subcategory: "Sports Equipment",
-     color: "#FCE8F3",
-       badge: "LIMITED",
+    color: "#FCE8F3",
+    badge: "LIMITED",
+    metaTitle: "Sports Goods Manufacturer & Wholesaler | AnyPro",
+    metaDescription:
+      "Explore quality Sports Goods from AnyPro, a trusted manufacturer and wholesaler offering recreational and sporting products for schools, clubs, activity centres and more.",
 
     rating: 4.7,
     reviews: 138,
@@ -638,66 +660,69 @@ export const products = [
   },
 
   {
-  id: 8,
-  name: "Activity & Recreational Games",
-  slug: "activity-recreational-games",
-  category: "Activity & Recreational Games",
-  subcategory: "Activity & Recreational Games",
-   color: "#FCE8F3",
-       badge: "LIMITED",
+    id: 8,
+    name: "Activity & Recreational Games",
+    slug: "activity-recreational-games",
+    category: "Activity & Recreational Games",
+    subcategory: "Activity & Recreational Games",
+    color: "#FCE8F3",
+    badge: "LIMITED",
 
-  rating: 4.8,
-  reviews: 115,
+    metaTitle: "Activity & Recreational Games Manufacturer | AnyPro",
+    metaDescription:
+      "Explore Activity & Recreational Games from AnyPro, a trusted manufacturer and wholesaler offering engaging games that encourage active play, interaction, coordination and fun.",
+    rating: 4.8,
+    reviews: 115,
 
-  shortDescription:
-    "Make every play session more engaging with Activity & Recreational Games from AnyPro. Designed to encourage movement, interaction, creativity, coordination, and problem-solving, this range brings together fun activities that keep children and players actively involved.",
+    shortDescription:
+      "Make every play session more engaging with Activity & Recreational Games from AnyPro. Designed to encourage movement, interaction, creativity, coordination, and problem-solving, this range brings together fun activities that keep children and players actively involved.",
 
-  images: ["/products/games.webp"],
+    images: ["/products/games.webp"],
 
-  features: [
-    "Interactive & Engaging",
-    "Skill-Building Activities",
-    "Wide Variety",
-    "Ideal for Activity Spaces",
-  ],
+    features: [
+      "Interactive & Engaging",
+      "Skill-Building Activities",
+      "Wide Variety",
+      "Ideal for Activity Spaces",
+    ],
 
-  specifications: [
-    ["Type", "Indoor & Outdoor Games"],
-    ["Material", "Plastic, Wood, Metal"],
-    ["Age Group", "Children & Adults"],
-    ["Use", "Schools, Homes, Parks & Play Areas"],
-    ["Purpose", "Fun, Recreation & Skill Development"],
-  ],
+    specifications: [
+      ["Type", "Indoor & Outdoor Games"],
+      ["Material", "Plastic, Wood, Metal"],
+      ["Age Group", "Children & Adults"],
+      ["Use", "Schools, Homes, Parks & Play Areas"],
+      ["Purpose", "Fun, Recreation & Skill Development"],
+    ],
 
-  productOverview:
-    "Make every play session more engaging with Activity & Recreational Games from AnyPro. Designed to encourage movement, interaction, creativity, coordination, and problem-solving, this range brings together fun activities that keep children and players actively involved. AnyPro is a Table Games and Board Games manufacturer and wholesaler, offering recreational products for schools, play schools, activity centres, clubs, resorts, indoor play areas, and institutional spaces. From interactive group activities to skill-based games, our range helps create fun-filled environments where learning and recreation come together.",
+    productOverview:
+      "Make every play session more engaging with Activity & Recreational Games from AnyPro. Designed to encourage movement, interaction, creativity, coordination, and problem-solving, this range brings together fun activities that keep children and players actively involved. AnyPro is a Table Games and Board Games manufacturer and wholesaler, offering recreational products for schools, play schools, activity centres, clubs, resorts, indoor play areas, and institutional spaces. From interactive group activities to skill-based games, our range helps create fun-filled environments where learning and recreation come together.",
 
-  whyChoose: [
-    {
-      title: "Manufacturer & Wholesaler",
-      description:
-        "Source activity and recreational games directly from AnyPro.",
-    },
-    {
-      title: "Wide Gaming Range",
-      description:
-        "Explore Table Games, Board Games, sports products, arcade games, and recreational activities.",
-    },
-    {
-      title: "Bulk Order Support",
-      description:
-        "Suitable for schools, institutions, activity centres, clubs, and commercial spaces.",
-    },
-    {
-      title: "Product & Pricing Guidance",
-      description:
-        "Get assistance with product selection, specifications, quantity, price, and overall cost.",
-    },
-    {
-      title: "Complete Recreation Solutions",
-      description:
-        "Build engaging activity spaces with games designed for fun, interaction, and skill development.",
-    },
-  ],
-}
+    whyChoose: [
+      {
+        title: "Manufacturer & Wholesaler",
+        description:
+          "Source activity and recreational games directly from AnyPro.",
+      },
+      {
+        title: "Wide Gaming Range",
+        description:
+          "Explore Table Games, Board Games, sports products, arcade games, and recreational activities.",
+      },
+      {
+        title: "Bulk Order Support",
+        description:
+          "Suitable for schools, institutions, activity centres, clubs, and commercial spaces.",
+      },
+      {
+        title: "Product & Pricing Guidance",
+        description:
+          "Get assistance with product selection, specifications, quantity, price, and overall cost.",
+      },
+      {
+        title: "Complete Recreation Solutions",
+        description:
+          "Build engaging activity spaces with games designed for fun, interaction, and skill development.",
+      },
+    ],
+  },
 ];

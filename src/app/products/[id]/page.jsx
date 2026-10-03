@@ -1,14 +1,10 @@
-
 import React from "react";
 import { notFound } from "next/navigation";
 import Product from "./Product";
 import { products } from "@/data/data";
 
-export default async function Page({ params }) {
-  const { id } = await params;
-  console.log(id)
-
-  const product = products.find((item) => {
+function getProductBySlug(id) {
+  return products.find((item) => {
     const productSlug = item.name
       .toLowerCase()
       .trim()
@@ -17,7 +13,32 @@ export default async function Page({ params }) {
 
     return productSlug === id;
   });
-  console.log(product)
+}
+
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  const product = getProductBySlug(id);
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+      description: "The requested product could not be found.",
+    };
+  }
+
+  return {
+    title: product.metaTitle || `${product.name} | RG Plastic`,
+    description:
+      product.metaDescription ||
+      `Learn more about ${product.name} from RG Plastic.`,
+  };
+}
+
+export default async function Page({ params }) {
+  const { id } = await params;
+
+  const product = getProductBySlug(id);
 
   if (!product) {
     notFound();
@@ -25,4 +46,3 @@ export default async function Page({ params }) {
 
   return <Product product={product} />;
 }
-

@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Anypro",
-  description: "Anypro",
+  title: "Table Games & Board Games Manufacturer in India | AnyPro",
+  description: "Discover AnyPro, a trusted Table Games & Board Games manufacturer and wholesaler in India. Explore Chess, Carrom, Foosball, Air Hockey and more.",
 };
 
 export default function RootLayout({ children }) {
