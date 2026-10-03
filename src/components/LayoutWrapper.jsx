@@ -4,7 +4,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-\
+
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -19,7 +19,7 @@ export default function LayoutWrapper({ children }) {
 
       <main>{children}</main>
 
-      {!isAdminRoute && <Footer />}
+      {!isAdminRoute && <Footer  />}
     </>
   );
 }

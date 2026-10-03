@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/layout/Footer";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,10 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} antialiased`}>
       <body className="font-[var(--font-poppins)]">
+        <LayoutWrapper>
         <SmoothScroll />
         {/* <Navbar /> */}
+        
         {children}
         {/* <Footer /> */}
+        </LayoutWrapper>
       </body>
     </html>
   );
