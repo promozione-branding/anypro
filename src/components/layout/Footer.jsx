@@ -603,7 +603,7 @@ export default function Footer() {
                             href="return-refund"
                             className="text-xs text-neutral-400 transition hover:text-white"
                         >
-                            Refund Policy
+                            Return Policy
                         </a>
 
                     </div>
