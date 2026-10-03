@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: product.metaTitle || `${product.name} | AnyPro`,
+    title: product.metaTitle || `${product.name} | AnyPro Games`,
     description:
       product.metaDescription || `Learn more about ${product.name} AnyPro.`,
   };
