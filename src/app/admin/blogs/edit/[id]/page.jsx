@@ -17,7 +17,7 @@ import {
   FiLink,
   FiCheckCircle,
 } from "react-icons/fi";
-import AdminSidebar from "@/components/Admin/AdminSidebar";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
 const JoditEditor = dynamic(() => import("jodit-react"), {
   ssr: false,

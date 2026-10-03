@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import AdminSidebar from "@/components/Admin/AdminSidebar";
 import {
   FiEdit2,
   FiTrash2,
@@ -12,6 +11,7 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import AdminSidebar from "@/components/admin/AdminSidebar";
 
 export default function Page() {
   const router = useRouter();
