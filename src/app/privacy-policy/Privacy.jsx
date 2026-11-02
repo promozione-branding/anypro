@@ -69,7 +69,7 @@ export default function Page() {
     "Improve our website, products, and services.",
     "Prevent fraud, abuse, and unauthorized activity.",
     "Comply with applicable legal and regulatory requirements.",
-  ];
+  ]; 
 
   const sharingItems = [
     ["Payment Providers", "To securely process payments and transactions."],
@@ -489,3 +489,4 @@ export default function Page() {
     </div>
   );
 }
+ 
