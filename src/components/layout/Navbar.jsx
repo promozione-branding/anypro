@@ -22,6 +22,7 @@ import {
     FiChevronRight,
 } from "react-icons/fi";
 import Link from "next/link";
+import { handleCallClick } from "@/data/tracking";
 
 const navItems = [
     {
@@ -246,7 +247,7 @@ export default function Navbar() {
                         >
                             <FiPhone size={13} />
 
-                            <Link href="tel:+919811117654">
+                            <Link href="tel:+919811117654" onClick={() => handleCallClick({ source: "Website" })}>
                                 +91 98111 17654
                             </Link>
                         </motion.div>

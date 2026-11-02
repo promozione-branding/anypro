@@ -14,6 +14,7 @@ import {
 
 import { Cloud, Sun, Star } from "@/components/svg/svg";
 import Popup from "@/components/layout/Popup";
+import { handleCallClick } from "@/data/tracking";
 
 const stats = [
   {
@@ -347,6 +348,7 @@ export default function About() {
                 <a
                  href="tel:+919811117654"
                   className="flex items-center gap-2 rounded-xl border border-black/10 bg-white px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+                onClick={() => handleCallClick({ source: "Website" })}
                 >
                   Contact Us
                 </a>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { handleCallClick } from "@/data/tracking";
 
 export default function Page() {
   const sections = [
@@ -475,6 +476,7 @@ export default function Page() {
                 <Link
                   href="tel:+919811117654"
                   className="mt-8 inline-flex items-center rounded-full bg-[#E31E24] px-8 py-3.5 text-sm font-semibold text-white no-underline transition hover:bg-[#C8171D]"
+                onClick={() => handleCallClick({ source: "Website" })}
                 >
                   Get Call Support
                   <span className="ml-2">→</span>

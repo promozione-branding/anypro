@@ -11,6 +11,7 @@ import {
 
 import { Star, Sun } from "../svg/svg";
 import Popup from "../layout/Popup";
+import { handleCallClick, handleWhatsappClick } from "@/data/tracking";
 
 /* ============================================================
    CTA SECTION
@@ -328,6 +329,7 @@ export default function AnyproCTA() {
                                         transition-colors
                                         hover:bg-white/15
                                     "
+                                    onClick={() => handleWhatsappClick({ source: "Website" })}
                                 >
                                     <div className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/15">
                                         <FaWhatsapp 
@@ -373,6 +375,7 @@ export default function AnyproCTA() {
                                         transition-colors
                                         hover:bg-white/15
                                     "
+                                    onClick={() => handleCallClick({ source: "Website" })}
                                 >
                                     <div className="flex h-7 w-7 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-xl bg-[#7C5CFC]/15">
                                         <Phone

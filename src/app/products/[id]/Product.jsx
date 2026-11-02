@@ -13,6 +13,7 @@ import {
 import { Cloud, Sun, Star } from "@/components/svg/svg";
 import { FaWhatsapp } from "react-icons/fa";
 import Popup from "@/components/layout/Popup";
+import { handleCallClick, handleWhatsappClick } from "@/data/tracking";
 
 // const product = {
 //   name: "Air Hockey Table",
@@ -106,7 +107,6 @@ export default function Product({ product }) {
 
   return (
     <main className="relative min-h-screen bg-white pt-32 pb-10">
-      {/* ================= DECORATIONS ================= */}
 
       <div className="pointer-events-none absolute left-[-30px] top-28 hidden opacity-60 md:block lg:left-5">
         <Cloud size={120} />
@@ -272,6 +272,7 @@ export default function Product({ product }) {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => handleWhatsappClick({ source: "Website" , obj : product.name})}
                     className="flex h-13 items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-5 text-sm font-bold text-black transition-all duration-300 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
                   >
                     <FaWhatsapp size={25} />
